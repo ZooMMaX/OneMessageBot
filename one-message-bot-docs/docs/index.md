@@ -26,13 +26,13 @@
 
 <img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка текстовых сообщений
 
-<img src="assets/round.png" alt="drawing" width="24"/> Отправка изображений с указанием ссылки на изображение, `java.io.File`, `byte[]`
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка изображений с указанием ссылки на изображение, `java.io.File`, `byte[]`
 
-<img src="assets/round.png" alt="drawing" width="24"/> Отправка видео с указанием ссылки на видео, `java.io.File`, `byte[]`
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка видео с указанием ссылки на видео, `java.io.File`, `byte[]`
 
-<img src="assets/round.png" alt="drawing" width="24"/> Отправка аудио с указанием ссылки на аудио, `java.io.File`, `byte[]`
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка аудио с указанием ссылки на аудио, `java.io.File`, `byte[]`
 
-<img src="assets/round.png" alt="drawing" width="24"/> Отправка документов с указанием ссылки на документ, `java.io.File`, `byte[]`
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка документов с указанием ссылки на документ, `java.io.File`, `byte[]`
 
 <img src="assets/round.png" alt="drawing" width="24"/> Отправка `Reply Keyboard`
 
