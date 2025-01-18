@@ -55,30 +55,30 @@ implementation 'ru.zoommax:OneMessageBot:1.0'
 
 ## Third-party Dependencies
 
-1. **[java-telegram-bot-api](https://github.com/pengrad/java-telegram-bot-api)**
-   - Repository: [github.com/pengrad/java-telegram-bot-api](https://github.com/pengrad/java-telegram-bot-api)
-   - Version: 7.0.1
+1. **[java-telegram-bot-api](https://github.com/pengrad/java-telegram-bot-api)** ::
+   Repository: [github.com/pengrad/java-telegram-bot-api](https://github.com/pengrad/java-telegram-bot-api) ::
+   Version: 7.0.1
 
-2. **[MongoDBConnector](https://github.com/zoommax/MongoDBConnector)**
-   - Repository: [github.com/zoommax/MongoDBConnector](https://github.com/zoommax/MongoDBConnector)
-   - Version: 1.1
+2. **[MongoDBConnector](https://github.com/zoommax/MongoDBConnector)** ::
+Repository: [github.com/zoommax/MongoDBConnector](https://github.com/zoommax/MongoDBConnector) ::
+Version: 1.1
 
-3. **[Lombok](https://projectlombok.org/)**
-   - Official site: [projectlombok.org](https://projectlombok.org/)
-   - Version: 1.18.30
+3. **[Lombok](https://projectlombok.org/)** ::
+Official site: [projectlombok.org](https://projectlombok.org/) ::
+Version: 1.18.30
 
-4. **[SLF4J](http://www.slf4j.org/)**
-   - Official site: [slf4j.org](http://www.slf4j.org/)
-   - Version: 2.0.11
+4. **[SLF4J](http://www.slf4j.org/)** ::
+Official site: [slf4j.org](http://www.slf4j.org/) ::
+Version: 2.0.11
 
-5. **[Reflections](https://github.com/ronmamo/reflections)**
-   - Repository: [github.com/ronmamo/reflections](https://github.com/ronmamo/reflections)
-   - Version: 0.10.2
+5. **[Reflections](https://github.com/ronmamo/reflections)** ::
+Repository: [github.com/ronmamo/reflections](https://github.com/ronmamo/reflections) ::
+Version: 0.10.2
 
-6. **[Jackson Databind](https://github.com/FasterXML/jackson-databind)**
-   - Repository: [github.com/FasterXML/jackson-databind](https://github.com/FasterXML/jackson-databind)
-   - Version: 2.18.2
+6. **[Jackson Databind](https://github.com/FasterXML/jackson-databind)** ::
+Repository: [github.com/FasterXML/jackson-databind](https://github.com/FasterXML/jackson-databind) ::
+Version: 2.18.2
 
-7. **[SQLite JDBC](https://github.com/xerial/sqlite-jdbc)**
-   - Repository: [github.com/xerial/sqlite-jdbc](https://github.com/xerial/sqlite-jdbc)
-   - Version: 3.47.2.0
+7. **[SQLite JDBC](https://github.com/xerial/sqlite-jdbc)** ::
+Repository: [github.com/xerial/sqlite-jdbc](https://github.com/xerial/sqlite-jdbc) ::
+Version: 3.47.2.0
