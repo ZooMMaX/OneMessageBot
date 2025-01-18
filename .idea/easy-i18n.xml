@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectSettingsService">
+    <option name="localesDirectory" value="$PROJECT_DIR$/src/main/resources/translations" />
+    <option name="filePattern" value="*.json" />
+    <option name="includeSubDirs" value="true" />
+    <option name="sorting" value="false" />
+    <option name="defaultNamespace" value="" />
+    <option name="previewLocale" value="default_en_US" />
+  </component>
+</project>

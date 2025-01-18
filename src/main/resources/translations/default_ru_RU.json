@@ -1,0 +1,11 @@
+{
+  "main": {
+    "bot_starting": "Бот запускается...",
+    "notification": "У Вас есть непрочитанные уведомления",
+    "notify_close": "Закрыть"
+  },
+  "keyboard": {
+    "next_button": "➡️",
+    "prev_button": "⬅️"
+  }
+}

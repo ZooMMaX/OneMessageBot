@@ -1,0 +1,11 @@
+{
+  "main": {
+    "bot_starting": "Bot starting...",
+    "notification": "You have unread notifications",
+    "notify_close": "Close"
+  },
+  "keyboard": {
+    "next_button": "➡️",
+    "prev_button": "⬅️"
+  }
+}

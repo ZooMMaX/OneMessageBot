@@ -1,0 +1,38 @@
+site_name: One Message Bot Docs
+theme:
+  name: readthedocs
+  highlightjs: true
+  hljs_languages:
+    - yaml
+    - rust
+    - java
+    - groovy
+    - xml
+    - json
+    - kotlin
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Database:
+      - Overview: database/overview.md
+      - MongoDB: database/mongodb.md
+      - SQLite: database/sqlite.md
+      - Custom: database/custom.md
+  - Localization:
+      - Localization: localization/localization.md
+  - ViewMessage:
+      - Listener: viewmessage/listener.md
+      - TextMessage: viewmessage/textmessage.md
+      - InlineKeyboard: viewmessage/inlinekeyboard.md
+      - AudioMessage: viewmessage/audiomessage.md
+      - DocumentMessage: viewmessage/documentmessage.md
+      - PhotoMessage: viewmessage/picturemessage.md
+      - VideoMessage: viewmessage/videomessage.md
+  - Keyboards:
+      - Button: keyboard/button.md
+      - Keyboard: keyboard/keyboard.md
+  - Notifications:
+      - Notification: notifications/notification.md
+markdown_extensions:
+  - toc:
+      permalink: true
