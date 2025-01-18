@@ -91,13 +91,13 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Button</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">Способы создания кнопки</a>
+    <li class="toctree-l2"><a class="reference internal" href="#methods-to-create-a-button">Methods to Create a Button</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_2">Форматированная строка</a>
+    <li class="toctree-l3"><a class="reference internal" href="#formatted-string">Formatted String</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_3">Объект</a>
+    <li class="toctree-l3"><a class="reference internal" href="#object">Object</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_4">Объект с указанием типа</a>
+    <li class="toctree-l3"><a class="reference internal" href="#object-with-type-specification">Object with Type Specification</a>
     </li>
         </ul>
     </li>
@@ -136,79 +136,76 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="button">Button<a class="headerlink" href="#button" title="Permanent link">&para;</a></h1>
-<p><strong>Реализация кнопки в приложении (боте)</strong></p>
-<p>Кнопки в телеграм представляют собой текст на кнопке и действие,
-которое будет выполняться при нажатии на кнопку.</p>
-<p>Библиотека поддерживает создание кнопок с:
-- callback действием
-- ссылкой на внешний ресурс
-- открытием телеграм мини приложения</p>
-<p>При создании кнопок с помощью строки следует учитывать зарезервированные
-символы:</p>
+<p><strong>Implementation of a Button in the Application (Bot)</strong></p>
+<p>Telegram buttons consist of the text displayed on the button and the action executed when the button is pressed.</p>
+<p>The library supports creating buttons with the following functionalities:
+- Callback actions
+- Links to external resources
+- Opening Telegram Mini Apps</p>
+<p>When creating buttons using strings, consider reserved characters:</p>
 <ul>
 <li><code>{</code></li>
 <li><code>}</code></li>
 <li><code>;</code></li>
 </ul>
-<p>В случае необходимости эти символы можно экранировать, используя символ <code>\</code>.</p>
-<h2 id="_1">Способы создания кнопки<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">Форматированная строка<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>Для этого создайте строку в формате <code>{text_on_button;button_action}</code></p>
+<p>If needed, these characters can be escaped using the <code>\</code> character.</p>
+<h2 id="methods-to-create-a-button">Methods to Create a Button<a class="headerlink" href="#methods-to-create-a-button" title="Permanent link">&para;</a></h2>
+<h3 id="formatted-string">Formatted String<a class="headerlink" href="#formatted-string" title="Permanent link">&para;</a></h3>
+<p>To use this method, create a string in the format <code>{text_on_button;button_action}</code>.</p>
 <ul>
-<li><code>text_on_button</code> - текст на кнопке</li>
-<li><code>button_action</code> - действие, которое будет выполняться при нажатии на кнопку</li>
+<li><code>text_on_button</code> - the text displayed on the button</li>
+<li><code>button_action</code> - the action executed when the button is pressed</li>
 </ul>
-<p>Если <code>button_action</code> начинается с:</p>
+<p>If <code>button_action</code> starts with:</p>
 <ul>
-<li><code>mapp</code>, то кнопка будет открывать телеграм мини приложение.</li>
-<li><code>http</code> или <code>tg</code>, то кнопка будет открывать ссылку.</li>
-<li>в остальных случаях кнопка будет выполнять callback действие.</li>
+<li><code>mapp</code>, the button will open a Telegram Mini App.</li>
+<li><code>http</code> or <code>tg</code>, the button will open a link.</li>
+<li>In other cases, the button will perform a callback action.</li>
 </ul>
-<p><strong>Примеры:</strong></p>
+<p><strong>Examples:</strong></p>
 <pre><code class="language-java">import ru.zoommax.utils.keyboard.Button;
 
-Button button1 = new Button(&quot;{Я открою телеграм мини приложение;mapphttp://example.com}&quot;);
-Button button2 = new Button(&quot;{Я открою ссылку;http://example.com}&quot;);
-Button button3 = new Button(&quot;{Я тоже открою ссылку;tg://username}&quot;);
-Button button4 = new Button(&quot;{Я выполню callback действие;any_data}&quot;);
+Button button1 = new Button(&quot;{I will open a Telegram Mini App;mapphttp://example.com}&quot;);
+Button button2 = new Button(&quot;{I will open a link;http://example.com}&quot;);
+Button button3 = new Button(&quot;{I will also open a link;tg://username}&quot;);
+Button button4 = new Button(&quot;{I will perform a callback action;any_data}&quot;);
 </code></pre>
-<h3 id="_3">Объект<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>Для этого создайте объект класса <code>Button</code> с полями <code>text</code> и <code>action</code>.</p>
+<h3 id="object">Object<a class="headerlink" href="#object" title="Permanent link">&para;</a></h3>
+<p>To use this method, create an instance of the <code>Button</code> class with <code>text</code> and <code>action</code> fields.</p>
 <ul>
-<li><code>text</code> - текст на кнопке</li>
-<li><code>action</code> - действие, которое будет выполняться при нажатии на кнопку</li>
+<li><code>text</code> - the text displayed on the button</li>
+<li><code>action</code> - the action executed when the button is pressed</li>
 </ul>
-<p>Если <code>action</code> начинается с:</p>
+<p>If <code>action</code> starts with:</p>
 <ul>
-<li><code>mapp</code>, то кнопка будет открывать телеграм мини приложение</li>
-<li><code>http</code> или <code>tg</code>, то кнопка будет открывать ссылку</li>
-<li>в остальных случаях кнопка будет выполнять callback действие</li>
+<li><code>mapp</code>, the button will open a Telegram Mini App.</li>
+<li><code>http</code> or <code>tg</code>, the button will open a link.</li>
+<li>In other cases, the button will perform a callback action.</li>
 </ul>
-<p><strong>Примеры:</strong></p>
-<pre><code class="language-java">
-Button button1 = new Button(&quot;Я открою телеграм мини приложение&quot;, &quot;mapphttp://example.com&quot;);
-Button button2 = new Button(&quot;Я открою ссылку&quot;, &quot;http://example.com&quot;);
-Button button3 = new Button(&quot;Я тоже открою ссылку&quot;, &quot;tg://username&quot;);
-Button button4 = new Button(&quot;Я выполню callback действие&quot;, &quot;any_data&quot;);
+<p><strong>Examples:</strong></p>
+<pre><code class="language-java">Button button1 = new Button(&quot;I will open a Telegram Mini App&quot;, &quot;mapphttp://example.com&quot;);
+Button button2 = new Button(&quot;I will open a link&quot;, &quot;http://example.com&quot;);
+Button button3 = new Button(&quot;I will also open a link&quot;, &quot;tg://username&quot;);
+Button button4 = new Button(&quot;I will perform a callback action&quot;, &quot;any_data&quot;);
 </code></pre>
-<h3 id="_4">Объект с указанием типа<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>Для этого создайте объект класса <code>Button</code> с полями <code>text</code>, <code>action</code> и <code>type</code></p>
+<h3 id="object-with-type-specification">Object with Type Specification<a class="headerlink" href="#object-with-type-specification" title="Permanent link">&para;</a></h3>
+<p>To use this method, create an instance of the <code>Button</code> class with <code>text</code>, <code>action</code>, and <code>type</code> fields.</p>
 <ul>
-<li><code>text</code> - текст на кнопке</li>
-<li><code>action</code> - действие, которое будет выполняться при нажатии на кнопку</li>
-<li><code>type</code> - тип кнопки</li>
+<li><code>text</code> - the text displayed on the button</li>
+<li><code>action</code> - the action executed when the button is pressed</li>
+<li><code>type</code> - the type of the button</li>
 </ul>
-<p><code>type</code> может принимать значения:</p>
+<p><code>type</code> can take the following values:</p>
 <ul>
-<li><code>CALLBACK</code> - callback действие</li>
-<li><code>LINK</code> - ссылка</li>
-<li><code>MINI_APP</code> - телеграм мини приложение</li>
+<li><code>CALLBACK</code> - callback action</li>
+<li><code>LINK</code> - link</li>
+<li><code>MINI_APP</code> - Telegram Mini App</li>
 </ul>
-<p><strong>Примеры:</strong></p>
-<pre><code class="language-java">Button button1 = new Button(&quot;Я открою телеграм мини приложение&quot;, &quot;http://example.com&quot;, ButtonType.MINI_APP);
-Button button2 = new Button(&quot;Я открою ссылку&quot;, &quot;http://example.com&quot;, ButtonType.LINK);
-Button button3 = new Button(&quot;Я тоже открою ссылку&quot;, &quot;tg://username&quot;, ButtonType.LINK);
-Button button4 = new Button(&quot;Я выполню callback действие&quot;, &quot;any_data&quot;, ButtonType.CALLBACK);
+<p><strong>Examples:</strong></p>
+<pre><code class="language-java">Button button1 = new Button(&quot;I will open a Telegram Mini App&quot;, &quot;http://example.com&quot;, ButtonType.MINI_APP);
+Button button2 = new Button(&quot;I will open a link&quot;, &quot;http://example.com&quot;, ButtonType.LINK);
+Button button3 = new Button(&quot;I will also open a link&quot;, &quot;tg://username&quot;, ButtonType.LINK);
+Button button4 = new Button(&quot;I will perform a callback action&quot;, &quot;any_data&quot;, ButtonType.CALLBACK);
 </code></pre>
               
             </div>

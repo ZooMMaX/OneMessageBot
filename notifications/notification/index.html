@@ -126,8 +126,8 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">&para;</a></h1>
-<p>В библиотеке реализована отправка уведомлений в чаты.</p>
-<p>Для создания уведомления используйте <code>CreateNotification</code> класс:</p>
+<p>The library supports sending notifications to chats.</p>
+<p>To create a notification, use the <code>CreateNotification</code> class:</p>
 <pre><code class="language-java">public class example {
 
     public static void main(String[] args) {
@@ -142,18 +142,20 @@
     }
 }
 </code></pre>
-<p>В результате будет создано уведомление с текстом <code>Hello notify</code> и отправлено в чат с id 123456789</p>
-<p>Параметры:</p>
+<p>As a result, a notification with the text <code>Hello notify</code> will be created and sent to the chat with ID <code>123456789</code>.</p>
+<p>Parameters:</p>
 <ul>
-<li><code>message</code> - текст уведомления</li>
-<li><code>tg_id</code> - id чата</li>
-<li><code>image</code> - <code>String</code> путь к изображению или видео</li>
-<li><code>notificationType</code> - тип уведомления, <code>FULL</code> или <code>ALERT</code></li>
-<li><code>fileType</code> - <code>String</code> тип файла, <code>image</code> или <code>video</code></li>
+<li><code>message</code> - the text of the notification</li>
+<li><code>tg_id</code> - the chat ID</li>
+<li><code>image</code> - a <code>String</code> path to the image or video</li>
+<li><code>notificationType</code> - the type of notification, either <code>FULL</code> or <code>ALERT</code></li>
+<li><code>fileType</code> - a <code>String</code> representing the file type, either <code>image</code> or <code>video</code></li>
 </ul>
-<p><code>NotificationType</code> определяет тип уведомления:</p>
-<p><code>FULL</code> - полное уведомление (показывается сразу, под сообщением размещаются кнопки других не прочитанных уведомлений),</p>
-<p><code>ALERT</code> - в чате появляется сообщение о том, что есть не прочитанные уведомления, под которыми размещаются кнопки других не прочитанных уведомлений. Нажатие на кнопку уведомления в чате приводит к открытию всплывающего окна ALERT согласно документации Telegram Bot API.</p>
+<p><code>NotificationType</code> defines the type of notification:</p>
+<ul>
+<li><code>FULL</code> - full notification (appears immediately, with buttons for other unread notifications displayed under the message),</li>
+<li><code>ALERT</code> - a message appears in the chat indicating there are unread notifications, with buttons for other unread notifications displayed under it. Clicking on the notification button opens a pop-up ALERT according to the Telegram Bot API documentation.</li>
+</ul>
               
             </div>
           </div><footer>

@@ -49,11 +49,11 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">О библиотеке</a>
+    <li class="toctree-l2"><a class="reference internal" href="#about-the-library">About the Library</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">Установка</a>
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_3">Сторонние зависимости</a>
+    <li class="toctree-l2"><a class="reference internal" href="#third-party-dependencies">Third-party Dependencies</a>
     </li>
     </ul>
                 </li>
@@ -130,28 +130,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="welcome-to-onemessagebot-documentation">Welcome to OneMessageBot documentation<a class="headerlink" href="#welcome-to-onemessagebot-documentation" title="Permanent link">&para;</a></h1>
-<h2 id="_1">О библиотеке<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>Данная библиотека реализует удобный фреймворк для создания ботов.
-Каждый бот созданный с помощью этой библиотеки работает в режиме "одно окно и кнопки".
-Фактически библиотека - это менеджер управления сообщением бота в телеграм,
-который сводит бота к представлению в виде одного окна и клавиатуры.</p>
-<p>Функции:</p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> MongoDB (встроенная поддержка)</p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> SQLite  (встроенная поддержка)</p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> JDBC указание <code>Connection</code></p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Создание многостраничных клавиатур</p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Многоязычность с возможностью указания собственных переводов</p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Обработка событий в методах согласно <code>ViewMessageImpl</code></p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Аннотация <code>@ViewMessageListener</code> для регистрации обработчиков событий</p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Поддержка уведомлений</p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка текстовых сообщений</p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка изображений с указанием ссылки на изображение, <code>java.io.File</code>, <code>byte[]</code></p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка видео с указанием ссылки на видео, <code>java.io.File</code>, <code>byte[]</code></p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка аудио с указанием ссылки на аудио, <code>java.io.File</code>, <code>byte[]</code></p>
-<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка документов с указанием ссылки на документ, <code>java.io.File</code>, <code>byte[]</code></p>
-<p><img src="assets/round.png" alt="drawing" width="24"/> Отправка <code>Reply Keyboard</code></p>
-<h2 id="_2">Установка<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+                <h1 id="welcome-to-onemessagebot-documentation">Welcome to OneMessageBot Documentation<a class="headerlink" href="#welcome-to-onemessagebot-documentation" title="Permanent link">&para;</a></h1>
+<h2 id="about-the-library">About the Library<a class="headerlink" href="#about-the-library" title="Permanent link">&para;</a></h2>
+<p>This library provides a convenient framework for creating bots.<br />
+Every bot created using this library operates in a "single window and buttons" mode.<br />
+Essentially, the library is a bot message manager for Telegram that simplifies bot functionality to a single window and keyboard interface.</p>
+<p>Features:</p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> MongoDB (built-in support)</p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> SQLite (built-in support)</p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> JDBC support with <code>Connection</code> specification</p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Creation of multi-page keyboards</p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Multilingual support with the ability to provide custom translations</p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Event handling in methods using <code>ViewMessageImpl</code></p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> <code>@ViewMessageListener</code> annotation for registering event handlers</p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Notification support</p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Sending text messages</p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Sending images with links, <code>java.io.File</code>, or <code>byte[]</code></p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Sending videos with links, <code>java.io.File</code>, or <code>byte[]</code></p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Sending audio with links, <code>java.io.File</code>, or <code>byte[]</code></p>
+<p><img src="assets/checkbox.png" alt="drawing" width="24"/> Sending documents with links, <code>java.io.File</code>, or <code>byte[]</code></p>
+<p><img src="assets/round.png" alt="drawing" width="24"/> Sending <code>Reply Keyboard</code></p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Maven:</p>
 <pre><code class="language-xml">&lt;dependency&gt;
     &lt;groupId&gt;ru.zoommax&lt;/groupId&gt;
@@ -162,57 +161,53 @@
 <p>Gradle:</p>
 <pre><code class="language-groovy">implementation 'ru.zoommax:OneMessageBot:1.0'
 </code></pre>
-<h2 id="_3">Сторонние зависимости<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="third-party-dependencies">Third-party Dependencies<a class="headerlink" href="#third-party-dependencies" title="Permanent link">&para;</a></h2>
 <ol>
+<li><strong><a href="https://github.com/pengrad/java-telegram-bot-api">java-telegram-bot-api</a></strong></li>
+<li>Repository: <a href="https://github.com/pengrad/java-telegram-bot-api">github.com/pengrad/java-telegram-bot-api</a></li>
 <li>
-<p><strong><a href="https://github.com/pengrad/java-telegram-bot-api">java-telegram-bot-api</a></strong></p>
-<ul>
-<li>Репозиторий: <a href="https://github.com/pengrad/java-telegram-bot-api">github.com/pengrad/java-telegram-bot-api</a></li>
-<li>Версия: 7.0.1</li>
-</ul>
+<p>Version: 7.0.1</p>
 </li>
 <li>
 <p><strong><a href="https://github.com/zoommax/MongoDBConnector">MongoDBConnector</a></strong></p>
-<ul>
-<li>Репозиторий: <a href="https://github.com/zoommax/MongoDBConnector">github.com/zoommax/MongoDBConnector</a></li>
-<li>Версия: 1.1</li>
-</ul>
+</li>
+<li>Repository: <a href="https://github.com/zoommax/MongoDBConnector">github.com/zoommax/MongoDBConnector</a></li>
+<li>
+<p>Version: 1.1</p>
 </li>
 <li>
 <p><strong><a href="https://projectlombok.org/">Lombok</a></strong></p>
-<ul>
-<li>Официальный сайт: <a href="https://projectlombok.org/">projectlombok.org</a></li>
-<li>Версия: 1.18.30</li>
-</ul>
+</li>
+<li>Official site: <a href="https://projectlombok.org/">projectlombok.org</a></li>
+<li>
+<p>Version: 1.18.30</p>
 </li>
 <li>
 <p><strong><a href="http://www.slf4j.org/">SLF4J</a></strong></p>
-<ul>
-<li>Официальный сайт: <a href="http://www.slf4j.org/">slf4j.org</a></li>
-<li>Версия: 2.0.11</li>
-</ul>
+</li>
+<li>Official site: <a href="http://www.slf4j.org/">slf4j.org</a></li>
+<li>
+<p>Version: 2.0.11</p>
 </li>
 <li>
 <p><strong><a href="https://github.com/ronmamo/reflections">Reflections</a></strong></p>
-<ul>
-<li>Репозиторий: <a href="https://github.com/ronmamo/reflections">github.com/ronmamo/reflections</a></li>
-<li>Версия: 0.10.2</li>
-</ul>
+</li>
+<li>Repository: <a href="https://github.com/ronmamo/reflections">github.com/ronmamo/reflections</a></li>
+<li>
+<p>Version: 0.10.2</p>
 </li>
 <li>
 <p><strong><a href="https://github.com/FasterXML/jackson-databind">Jackson Databind</a></strong></p>
-<ul>
-<li>Репозиторий: <a href="https://github.com/FasterXML/jackson-databind">github.com/FasterXML/jackson-databind</a></li>
-<li>Версия: 2.18.2</li>
-</ul>
+</li>
+<li>Repository: <a href="https://github.com/FasterXML/jackson-databind">github.com/FasterXML/jackson-databind</a></li>
+<li>
+<p>Version: 2.18.2</p>
 </li>
 <li>
 <p><strong><a href="https://github.com/xerial/sqlite-jdbc">SQLite JDBC</a></strong></p>
-<ul>
-<li>Репозиторий: <a href="https://github.com/xerial/sqlite-jdbc">github.com/xerial/sqlite-jdbc</a></li>
-<li>Версия: 3.47.2.0  </li>
-</ul>
 </li>
+<li>Repository: <a href="https://github.com/xerial/sqlite-jdbc">github.com/xerial/sqlite-jdbc</a></li>
+<li>Version: 3.47.2.0</li>
 </ol>
               
             </div>
@@ -262,5 +257,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-01-18 12:25:02.895909+00:00
+Build Date UTC : 2025-01-18 12:42:36.079610+00:00
 -->

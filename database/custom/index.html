@@ -126,15 +126,15 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="database-custom">Database CUSTOM<a class="headerlink" href="#database-custom" title="Permanent link">&para;</a></h1>
-<p>Вы можете использовать реляционную базу данных по своему усмотрению.</p>
-<p>Для указания базы данных установите соответствующие настройки в <code>BotSettings</code>:</p>
+<p>You can use a relational database of your choice.</p>
+<p>To specify the database, configure the following settings in <code>BotSettings</code>:</p>
 <ul>
 <li><code>botSettings.setDbType(DbType.CUSTOM)</code></li>
-<li><code>botSettings.setDbUrl("url")</code> без имени базы данных. Пример: <code>botSettings.setDbUrl("jdbc:postgresql://localhost:5432/")</code></li>
+<li><code>botSettings.setDbUrl("url")</code> without the database name. Example: <code>botSettings.setDbUrl("jdbc:postgresql://localhost:5432/")</code></li>
 <li><code>botSettings.setDbUser("user")</code></li>
 <li><code>botSettings.setDbPassword("password")</code></li>
 <li><code>botSettings.setDbName("name")</code></li>
-<li><code>botSettings.setDbConnection(connection)</code>, где <code>connection</code> - JDBC <code>Connection</code> с подключением к базе данных</li>
+<li><code>botSettings.setDbConnection(connection)</code>, where <code>connection</code> is a JDBC <code>Connection</code> to the database.</li>
 </ul>
               
             </div>

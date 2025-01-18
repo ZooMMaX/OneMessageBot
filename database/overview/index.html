@@ -126,25 +126,24 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="database-overview">Database Overview<a class="headerlink" href="#database-overview" title="Permanent link">&para;</a></h1>
-<p>По умолчанию OneMessageBot использует SQLite базу данных, но можно использовать MongoDB
-или другую реляционную базу данных через JDBC, указав соответствующие настройки.</p>
-<p>Для указания базы данных установите соответствующие настройки в <code>BotSettings</code>:</p>
+<p>By default, OneMessageBot uses an SQLite database, but you can switch to MongoDB or any other relational database via JDBC by configuring the appropriate settings.</p>
+<p>To specify the database, set the following options in <code>BotSettings</code>:</p>
 <ul>
 <li>MongoDB: <code>botSettings.setDbType(DbType.MONGODB)</code></li>
 <li>SQLite: <code>botSettings.setDbType(DbType.SQLITE)</code></li>
 <li>Custom: <code>botSettings.setDbType(DbType.CUSTOM)</code></li>
 </ul>
-<p>При использовании <code>DbType.CUSTOM</code> необходимо указать:</p>
+<p>When using <code>DbType.CUSTOM</code>, the following must be specified:</p>
 <ul>
-<li>URL базы данных: <code>botSettings.setDbUrl(url)</code> без имени базы данных</li>
-<li>Пользователь: <code>botSettings.setDbUser(user)</code></li>
-<li>Пароль: <code>botSettings.setDbPassword(password)</code></li>
-<li>Имя базы данных: <code>botSettings.setDbName(name)</code></li>
-<li>JDBC <code>Connection</code> <code>botSettings.setDbConnection(connection)</code></li>
+<li>Database URL: <code>botSettings.setDbUrl(url)</code> without the database name</li>
+<li>User: <code>botSettings.setDbUser(user)</code></li>
+<li>Password: <code>botSettings.setDbPassword(password)</code></li>
+<li>Database name: <code>botSettings.setDbName(name)</code></li>
+<li>JDBC <code>Connection</code>: <code>botSettings.setDbConnection(connection)</code></li>
 </ul>
-<p><a href="/database/mongodb">MongoDB documentation</a></p>
-<p><a href="/database/sqlite">SQLite documentation</a></p>
-<p><a href="/database/custom">Custom database documentation</a></p>
+<p><a href="/database/mongodb">MongoDB documentation</a><br />
+<a href="/database/sqlite">SQLite documentation</a><br />
+<a href="/database/custom">Custom database documentation</a></p>
               
             </div>
           </div><footer>

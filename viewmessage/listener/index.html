@@ -126,11 +126,8 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="listener">Listener<a class="headerlink" href="#listener" title="Permanent link">&para;</a></h1>
-<p>Чтобы создать обработчик событий, необходимо создать класс,
-реализующий интерфейс <code>ViewMessageImpl</code>, реализовать его методы
-и добавить к классу аннотацию <code>@ViewMessageListener</code>.
-Библиотека выполняет broadcast-рассылку событий классам, помеченным аннотацией <code>@ViewMessageListener</code>.</p>
-<p>Например:</p>
+<p>To create an event handler, you need to create a class that implements the <code>ViewMessageImpl</code> interface, implement its methods, and add the <code>@ViewMessageListener</code> annotation to the class. The library performs a broadcast of events to the classes marked with the <code>@ViewMessageListener</code> annotation.</p>
+<p>For example:</p>
 <pre><code class="language-java">import ru.zoommax.utils.ViewMessageListener;
 import ru.zoommax.view.TextMessage;
 
@@ -169,27 +166,22 @@ public class Start implements ViewMessageImpl {
     public ViewMessage onChosenInlineResult(String resultId, long queryId, String chatId, Update update) {
         return null;
     }
-} 
+}
 </code></pre>
-<p>Класс выше реализует эхо-бота.</p>
-<p><code>ViewMessage</code> может быть одним из следующих типов:</p>
+<p>The above class implements an echo bot.</p>
+<p>The <code>ViewMessage</code> can be one of the following types:</p>
 <ul>
-<li><code>TextMessage</code> - для отправки текстовых сообщений</li>
-<li><code>PhotoMessage</code> - для отправки фотографий</li>
-<li><code>DocumentMessage</code> - для отправки документов</li>
-<li><code>VideoMessage</code> - для отправки видео</li>
-<li><code>AudioMessage</code> - для отправки аудио</li>
-<li><code>InlineKeyboard</code> - для отправки кнопок в виде клавиатуры</li>
+<li><code>TextMessage</code> - for sending text messages</li>
+<li><code>PhotoMessage</code> - for sending photos</li>
+<li><code>DocumentMessage</code> - for sending documents</li>
+<li><code>VideoMessage</code> - for sending videos</li>
+<li><code>AudioMessage</code> - for sending audio</li>
+<li><code>InlineKeyboard</code> - for sending inline keyboard buttons</li>
 </ul>
-<p>Метод <code>onMessage</code> обрабатывает текстовые сообщения от пользователя.
-Может использоваться для ввода произвольных данных пользователем.
-Для обработки произвольных данных в конкретном обработчике установите
-<code>onMessageFlag</code> при создании любого типа сообщения.
-Он будет сохранён в базу данных и передан в метод <code>onMessage</code> в качестве
-<code>onMessageFlag</code> при возникновении события. <code>onMessageFlag</code> автоматически очищается при возникновении события, но после его передачи.</p>
-<p>Метод <code>onCommand</code> обрабатывает команды от пользователя, начинающиеся с <code>/</code>.</p>
-<p>Метод <code>onPicture</code> обрабатывает изображения, которые присылаются пользователем.</p>
-<p>Метод <code>onCallbackQuery</code> обрабатывает запросы от кнопок в клавиатуре.</p>
+<p>The <code>onMessage</code> method handles text messages from the user and can be used for custom data input by the user. To process custom data in a specific handler, set the <code>onMessageFlag</code> when creating any type of message. It will be saved in the database and passed to the <code>onMessage</code> method as <code>onMessageFlag</code> when the event occurs. The <code>onMessageFlag</code> is automatically cleared when the event occurs but is passed as part of the event.</p>
+<p>The <code>onCommand</code> method handles commands from the user that start with <code>/</code>.</p>
+<p>The <code>onPicture</code> method handles images sent by the user.</p>
+<p>The <code>onCallbackQuery</code> method handles requests from keyboard buttons.</p>
               
             </div>
           </div><footer>

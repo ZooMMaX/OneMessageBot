@@ -71,9 +71,9 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#default_en_us">default_en_US</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_1">Правила создания локализации</a>
+    <li class="toctree-l2"><a class="reference internal" href="#localization-creation-rules">Localization Creation Rules</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_2">Использование локализации в Вашем коде</a>
+    <li class="toctree-l2"><a class="reference internal" href="#using-localization-in-your-code">Using Localization in Your Code</a>
     </li>
     </ul>
                   </li>
@@ -132,16 +132,15 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="localization">Localization<a class="headerlink" href="#localization" title="Permanent link">&para;</a></h1>
-<p>Встроенная поддержка локализации.
-По умолчанию используется английский язык.
-Библиотека имеет две локализации: <code>default_en_US</code> - английский, <code>default_ru_RU</code> - русский.</p>
-<p>Для указания локализации установите соответствующие настройки в <code>BotSettings</code>:</p>
+<p>Built-in localization support.<br />
+By default, English is used as the language. The library supports two localizations: <code>default_en_US</code> for English and <code>default_ru_RU</code> for Russian.</p>
+<p>To set the localization, configure the corresponding settings in <code>BotSettings</code>:</p>
 <ul>
-<li><code>botSettings.setDefaultLanguage("default_en_US")</code> - устанавливает язык по умолчанию. Можно использовать <code>default_en_US</code>, <code>default_ru_RU</code> или собственную локализацию.</li>
-<li><code>botSettings.setLanguageDirPath("/path/to/translations")</code> - устанавливает путь к каталогу с переводами</li>
+<li><code>botSettings.setDefaultLanguage("default_en_US")</code> - sets the default language. You can use <code>default_en_US</code>, <code>default_ru_RU</code>, or your custom localization.</li>
+<li><code>botSettings.setLanguageDirPath("/path/to/translations")</code> - sets the path to the directory with translations.</li>
 </ul>
 <h3 id="default_en_us">default_en_US<a class="headerlink" href="#default_en_us" title="Permanent link">&para;</a></h3>
-<p>Это шаблон локализации для английского языка. При создании локализаций, для изменения перевода внутри библиотеки используется этот шаблон.</p>
+<p>This is the localization template for the English language. When creating localizations, this template is used to modify the translation inside the library.</p>
 <pre><code class="language-json">{
   &quot;main&quot;: {
     &quot;bot_starting&quot;: &quot;Bot starting...&quot;,
@@ -154,28 +153,27 @@
   }
 }
 </code></pre>
-<h3 id="_1">Правила создания локализации<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="localization-creation-rules">Localization Creation Rules<a class="headerlink" href="#localization-creation-rules" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Все ключи должны быть в нижнем регистре, слова разделяются символом <code>_</code>.</li>
-<li>Все значения должны быть в строковом формате</li>
-<li>Используйте вложенность.</li>
-<li>Файлы должны иметь формат и расширение <code>json</code></li>
+<li>All keys should be in lowercase, with words separated by underscores (<code>_</code>).</li>
+<li>All values must be in string format.</li>
+<li>Use nesting.</li>
+<li>Files should be in <code>json</code> format and extension.</li>
 </ol>
-<h3 id="_2">Использование локализации в Вашем коде<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>Установите в <code>BotSettings</code> параметры <code>defaultLanguage</code> и <code>languageDirPath</code>.
-Запустите бота. Название языка будет таким же, как и название файла с переводами.</p>
+<h3 id="using-localization-in-your-code">Using Localization in Your Code<a class="headerlink" href="#using-localization-in-your-code" title="Permanent link">&para;</a></h3>
+<p>Set the <code>defaultLanguage</code> and <code>languageDirPath</code> parameters in <code>BotSettings</code>.<br />
+Start the bot. The language name will be the same as the name of the translation file.</p>
 <pre><code class="language-java">import ru.zoommax.BotApp;
 import ru.zoommax.utils.lang.LocalizationManager;
 
 LocalizationManager localizationManager = BotApp.localizationManager;
 String botStart = localizationManager.getTranslationForLanguage(BotApp.getUserLanguage(&quot;chatId&quot;), &quot;main.bot_starting&quot;);
 </code></pre>
-<p>Доступ к вложенным ключам производится путём передачи строки,
-где разделителем между ключами является символ <code>.</code></p>
-<p>Метод <code>BotApp.getUserLanguage(String chatId)</code> возвращает название языка пользователя, сохранённое в базе данных.</p>
-<p>Метод <code>BotApp.setUserLanguage(String chatId, String language)</code> устанавливает язык пользователя, сохраняя его в базе данных.
-<code>String language</code> - название языка, которое совпадает с названием файла перевода в каталоге переводов.</p>
-<p><code>LocalizationManager</code> можно использовать, как основной менеджер переводов в Вашем проекте.</p>
+<p>Access nested keys by passing a string, where the separator between keys is the period (<code>.</code>) character.</p>
+<p>The method <code>BotApp.getUserLanguage(String chatId)</code> returns the user's language name, which is saved in the database.</p>
+<p>The method <code>BotApp.setUserLanguage(String chatId, String language)</code> sets the user's language and saves it in the database.<br />
+<code>String language</code> - the language name, which matches the translation file name in the translation directory.</p>
+<p><code>LocalizationManager</code> can be used as the main translation manager in your project.</p>
               
             </div>
           </div><footer>

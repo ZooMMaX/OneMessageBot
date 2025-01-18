@@ -126,8 +126,8 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="documentmessage">DocumentMessage<a class="headerlink" href="#documentmessage" title="Permanent link">&para;</a></h1>
-<p>Представляет собой билдер класса <code>DocumentMessage</code>, который предназначен для отправки документов.</p>
-<p><strong>Примеры:</strong></p>
+<p>The <code>DocumentMessage</code> class builder is designed for sending documents.</p>
+<p><strong>Examples:</strong></p>
 <pre><code class="language-java">import ru.zoommax.view.DocumentMessage;
 import ru.zoommax.view.ViewMessage;
 
@@ -155,18 +155,18 @@ public class example {
     }
 }
 </code></pre>
-<p>Параметры:</p>
+<p>Parameters:</p>
 <ul>
-<li><code>documentAsUrl</code> - URL-адрес документа</li>
-<li><code>documentAsFile</code> - файл документа</li>
-<li><code>documentAsBytes</code> - массив байтов документа</li>
-<li><code>chatId</code> - идентификатор чата</li>
-<li><code>caption</code> - описание документа</li>
-<li><code>keyboard</code> - клавиатура <code>Keyboard</code></li>
-<li><code>onMessageFlag</code> - флаг, который будет использоваться для обработки сообщений</li>
-<li><code>notify</code> - признак, что сообщение является уведомлением. По умолчанию <code>false</code></li>
+<li><code>documentAsUrl</code> - URL of the document</li>
+<li><code>documentAsFile</code> - document file</li>
+<li><code>documentAsBytes</code> - byte array of the document</li>
+<li><code>chatId</code> - chat ID</li>
+<li><code>caption</code> - description of the document</li>
+<li><code>keyboard</code> - the keyboard <code>Keyboard</code></li>
+<li><code>onMessageFlag</code> - flag used for message processing</li>
+<li><code>notify</code> - indicates whether the message is a notification. Default is <code>false</code>.</li>
 </ul>
-<p>Может быть возвращён в качестве <code>ViewMessage</code> или запущен с помощью метода <code>run()</code>.</p>
+<p>It can be returned as a <code>ViewMessage</code> or executed using the <code>run()</code> method.</p>
               
             </div>
           </div><footer>
