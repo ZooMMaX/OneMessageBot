@@ -8,33 +8,33 @@
 
 Функции:
 
-<img src="/assets/checkbox.png" alt="drawing" width="24"/> MongoDB (встроенная поддержка)
+<img src="assets/checkbox.png" alt="drawing" width="24"/> MongoDB (встроенная поддержка)
 
-<img src="/assets/checkbox.png" alt="drawing" width="24"/> SQLite  (встроенная поддержка)
+<img src="assets/checkbox.png" alt="drawing" width="24"/> SQLite  (встроенная поддержка)
 
-<img src="/assets/checkbox.png" alt="drawing" width="24"/> JDBC указание `Connection`
+<img src="assets/checkbox.png" alt="drawing" width="24"/> JDBC указание `Connection`
 
-<img src="/assets/checkbox.png" alt="drawing" width="24"/> Создание многостраничных клавиатур
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Создание многостраничных клавиатур
 
-<img src="/assets/checkbox.png" alt="drawing" width="24"/> Многоязычность с возможностью указания собственных переводов
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Многоязычность с возможностью указания собственных переводов
 
-<img src="/assets/checkbox.png" alt="drawing" width="24"/> Обработка событий в методах согласно `ViewMessageImpl`
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Обработка событий в методах согласно `ViewMessageImpl`
 
-<img src="/assets/checkbox.png" alt="drawing" width="24"/> Аннотация `@ViewMessageListener` для регистрации обработчиков событий
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Аннотация `@ViewMessageListener` для регистрации обработчиков событий
 
-<img src="/assets/checkbox.png" alt="drawing" width="24"/> Поддержка уведомлений
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Поддержка уведомлений
 
-<img src="/assets/checkbox.png" alt="drawing" width="24"/> Отправка текстовых сообщений
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка текстовых сообщений
 
-<img src="/assets/round.png" alt="drawing" width="24"/> Отправка изображений с указанием ссылки на изображение, `java.io.File`, `byte[]`
+<img src="assets/round.png" alt="drawing" width="24"/> Отправка изображений с указанием ссылки на изображение, `java.io.File`, `byte[]`
 
-<img src="/assets/round.png" alt="drawing" width="24"/> Отправка видео с указанием ссылки на видео, `java.io.File`, `byte[]`
+<img src="assets/round.png" alt="drawing" width="24"/> Отправка видео с указанием ссылки на видео, `java.io.File`, `byte[]`
 
-<img src="/assets/round.png" alt="drawing" width="24"/> Отправка аудио с указанием ссылки на аудио, `java.io.File`, `byte[]`
+<img src="assets/round.png" alt="drawing" width="24"/> Отправка аудио с указанием ссылки на аудио, `java.io.File`, `byte[]`
 
-<img src="/assets/round.png" alt="drawing" width="24"/> Отправка документов с указанием ссылки на документ, `java.io.File`, `byte[]`
+<img src="assets/round.png" alt="drawing" width="24"/> Отправка документов с указанием ссылки на документ, `java.io.File`, `byte[]`
 
-<img src="/assets/round.png" alt="drawing" width="24"/> Отправка `Reply Keyboard`
+<img src="assets/round.png" alt="drawing" width="24"/> Отправка `Reply Keyboard`
 
 ## Установка
 
