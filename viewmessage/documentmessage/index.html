@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>DocumentMessage - One Message Bot Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "DocumentMessage";
+        var mkdocs_page_input_path = "viewmessage/documentmessage.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/groovy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/kotlin.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> One Message Bot Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../quickstart/">Quickstart</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database/mongodb/">MongoDB</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database/sqlite/">SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database/custom/">Custom</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Localization</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../localization/localization/">Localization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ViewMessage</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../listener/">Listener</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../textmessage/">TextMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../inlinekeyboard/">InlineKeyboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../audiomessage/">AudioMessage</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">DocumentMessage</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../picturemessage.md">PhotoMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../videomessage/">VideoMessage</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Keyboards</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../keyboard/button/">Button</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../keyboard/keyboard/">Keyboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notifications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../notifications/notification/">Notification</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">One Message Bot Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">ViewMessage</li>
+      <li class="breadcrumb-item active">DocumentMessage</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="documentmessage">DocumentMessage<a class="headerlink" href="#documentmessage" title="Permanent link">&para;</a></h1>
+<p>Представляет собой билдер класса <code>DocumentMessage</code>, который предназначен для отправки документов.</p>
+<p><strong>Примеры:</strong></p>
+<pre><code class="language-java">import ru.zoommax.view.DocumentMessage;
+import ru.zoommax.view.ViewMessage;
+
+public class example {
+
+    public static void main(String[] args) {
+        DocumentMessage documentMessage = DocumentMessage.builder()
+                .chatId(123456789)
+                .documentAsUrl(&quot;https://example.com/document.pdf&quot;)
+                /*optional
+                .documentAsFile(new File(&quot;path/to/document.pdf&quot;))
+                .documentAsBytes(new byte[]{1,2,3,4,5})
+                 */
+                .keyboard(Keyboard.builder()
+                        .chatId(123456789)
+                        .code(&quot;{Google;https://google.ru}{Yandex;https://ya.ru}\n&quot; +
+                                &quot;{Start;strt}&quot;)
+                        .build())
+                .caption(&quot;Hello&quot;)
+                .onMessageFlag(&quot;start&quot;)
+                .notify(false)
+                .build();
+
+        documentMessage.run();
+    }
+}
+</code></pre>
+<p>Параметры:</p>
+<ul>
+<li><code>documentAsUrl</code> - URL-адрес документа</li>
+<li><code>documentAsFile</code> - файл документа</li>
+<li><code>documentAsBytes</code> - массив байтов документа</li>
+<li><code>chatId</code> - идентификатор чата</li>
+<li><code>caption</code> - описание документа</li>
+<li><code>keyboard</code> - клавиатура <code>Keyboard</code></li>
+<li><code>onMessageFlag</code> - флаг, который будет использоваться для обработки сообщений</li>
+<li><code>notify</code> - признак, что сообщение является уведомлением. По умолчанию <code>false</code></li>
+</ul>
+<p>Может быть возвращён в качестве <code>ViewMessage</code> или запущен с помощью метода <code>run()</code>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../audiomessage/" class="btn btn-neutral float-left" title="AudioMessage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../videomessage/" class="btn btn-neutral float-right" title="VideoMessage">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../audiomessage/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../videomessage/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

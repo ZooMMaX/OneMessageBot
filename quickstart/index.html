@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Quickstart - One Message Bot Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Quickstart";
+        var mkdocs_page_input_path = "quickstart.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/groovy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/kotlin.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> One Message Bot Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Quickstart</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">Добавьте зависимость в Ваш проект</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Создание бота</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_3">Указать настройки бота</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_4">Запустите бота</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_5">Создайте "окно"</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../database/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../database/mongodb/">MongoDB</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../database/sqlite/">SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../database/custom/">Custom</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Localization</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../localization/localization/">Localization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ViewMessage</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../viewmessage/listener/">Listener</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../viewmessage/textmessage/">TextMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../viewmessage/inlinekeyboard/">InlineKeyboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../viewmessage/audiomessage/">AudioMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../viewmessage/documentmessage/">DocumentMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../viewmessage/picturemessage.md">PhotoMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../viewmessage/videomessage/">VideoMessage</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Keyboards</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../keyboard/button/">Button</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../keyboard/keyboard/">Keyboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notifications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../notifications/notification/">Notification</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">One Message Bot Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Quickstart</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="quickstart">Quickstart<a class="headerlink" href="#quickstart" title="Permanent link">&para;</a></h1>
+<h2 id="_1">Добавьте зависимость в Ваш проект<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Maven:</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;ru.zoommax&lt;/groupId&gt;
+    &lt;artifactId&gt;OneMessageBot&lt;/artifactId&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>Gradle:</p>
+<pre><code class="language-groovy">implementation 'ru.zoommax:OneMessageBot:1.0'
+</code></pre>
+<h2 id="_2">Создание бота<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">Указать настройки бота<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">package test.cl;
+
+import ru.zoommax.BotApp;
+import ru.zoommax.BotSettings;
+import ru.zoommax.utils.db.DbType;
+
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BotSettings botSettings = BotSettings.builder()
+                .botToken(&quot;XXXX:yyyyyy&quot;)
+                .dbType(DbType.SQLITE)
+                .buttonsRows(5)
+                .dbName(&quot;TestBotApp&quot;)
+                .languageDirPath(&quot;translations&quot;)
+                .defaultLanguage(&quot;my_default_lang&quot;)
+                .dbConnection(null)
+                .dbUrl(&quot;jdbc:sqlite:./&quot;)
+                .dbUser(&quot;&quot;)
+                .dbPassword(&quot;&quot;)
+                .build();
+    }
+}
+</code></pre>
+<ul>
+<li><code>botToken</code> - токен бота, полученный у @BotFather. Обязательно.</li>
+<li><code>dbType</code> - тип базы данных. Необязательно. Может быть <code>DbType.SQLITE</code>, <code>DbType.MONGODB</code> или <code>DbType.CUSTOM</code>. По умолчанию <code>DbType.SQLITE</code>.</li>
+<li><code>buttonsRows</code> - количество строк кнопок. Необязательно. По умолчанию 4.</li>
+<li><code>dbName</code> - имя базы данных. Необязательно. По умолчанию <code>BotApp</code>.</li>
+<li><code>languageDirPath</code> - путь к каталогу с переводами. Необязательно. По умолчанию пустая строка.</li>
+<li><code>defaultLanguage</code> - язык по умолчанию. Необязательно. По умолчанию <code>default_en_US</code>.</li>
+<li><code>dbConnection</code> - подключение к базе данных. Необязательно. По умолчанию <code>null</code>.</li>
+<li><code>dbUrl</code> - URL подключения к базе данных. Необязательно. По умолчанию <code>null</code>.</li>
+<li><code>dbUser</code> - имя пользователя подключения к базе данных. Необязательно. По умолчанию пустая строка.</li>
+<li><code>dbPassword</code> - пароль подключения к базе данных. Необязательно. По умолчанию пустая строка.</li>
+<li><code>disableGithubUrl</code> - подробности в файле <a href="https://github.com/ZooMMaX/OneMessageBot/blob/master/LICENSE">LICENSE</a>.</li>
+</ul>
+<h3 id="_4">Запустите бота<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">package test.cl;
+
+import ru.zoommax.BotApp;
+
+public class Main {
+    public static void main(String[] args) {
+        //BotSettings botSettings = BotSettings.builder()
+        // ...
+        // .build();
+
+        new Thread(new BotApp(botSettings)).start();
+    }
+}
+</code></pre>
+<h3 id="_5">Создайте "окно"<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<pre><code class="language-java">package test.cl;
+
+import com.pengrad.telegrambot.model.PhotoSize;
+import com.pengrad.telegrambot.model.Update;
+import ru.zoommax.BotApp;
+import ru.zoommax.utils.CreateNotification;
+import ru.zoommax.utils.ViewMessageImpl;
+import ru.zoommax.utils.ViewMessageListener;
+import ru.zoommax.utils.db.NotificationType;
+import ru.zoommax.utils.keyboard.Keyboard;
+import ru.zoommax.view.TextMessage;
+import ru.zoommax.view.ViewMessage;
+
+@ViewMessageListener
+public class Start implements ViewMessageImpl {
+    @Override
+    public ViewMessage onMessage(String message, int messageId, long chatId, String onMessageFlag, Update update) {
+        if (onMessageFlag.equals(&quot;start&quot;)) {
+            return TextMessage.builder()
+                    .onMessageFlag(&quot;start&quot;)
+                    .text(&quot;Hello &quot; + message)
+                    .chatId(chatId)
+                    .keyboard(Keyboard.builder()
+                            .chatId(chatId)
+                            .code(&quot;{Google;https://google.com}{Yandex;https://ya.ru}\n&quot; +
+                                    &quot;{Start;strt}\n&quot; +
+                                    &quot;{Google;https://google.com}{Yandex;https://ya.ru}\n&quot; +
+                                    &quot;{Start;strt}\n&quot; +
+                                    &quot;{Google;https://google.com}{Yandex;https://ya.ru}\n&quot; +
+                                    &quot;{Start;strt}\n&quot; +
+                                    &quot;{Google;https://google.com}{Yandex;https://ya.ru}\n&quot; +
+                                    &quot;{Start;strt}&quot;)
+                            .build())
+                    .build();
+        }
+        return null;
+    }
+
+    @Override
+    public ViewMessage onCommand(String command, int messageId, long chatId, Update update) {
+        if (command.equals(&quot;/start&quot;)) {
+            if (chatId == 000000){
+                BotApp.setUserLanguage(String.valueOf(chatId), &quot;default_en_US&quot;);
+            }
+            return TextMessage.builder()
+                    .onMessageFlag(&quot;start&quot;)
+                    .text(&quot;Hello&quot;)
+                    .chatId(chatId)
+                    .keyboard(Keyboard.builder()
+                            .chatId(chatId)
+                            .code(&quot;{Google;https://google.com}{Yandex;https://ya.ru}\n&quot; +
+                                    &quot;{Start;strt}&quot;)
+                            .build())
+                    .build();
+        }
+        return null;
+    }
+
+    @Override
+    public ViewMessage onPicture(PhotoSize[] photoSize, String caption, int messageId, long chatId, Update update) {
+        return null;
+    }
+
+    @Override
+    public ViewMessage onCallbackQuery(String data, int messageId, long chatId, Update update) {
+        if (data.equals(&quot;strt&quot;)) {
+            CreateNotification createNotification = new CreateNotification(&quot;Hello callback notify&quot;, String.valueOf(chatId), null, NotificationType.FULL, null);
+            createNotification.run();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            return TextMessage.builder()
+                    .onMessageFlag(&quot;start&quot;)
+                    .text(&quot;Hello callback&quot;)
+                    .chatId(chatId)
+                    .keyboard(Keyboard.builder()
+                            .chatId(chatId)
+                            .code(&quot;{Google;https://google.com}{Yandex;https://ya.ru}\n&quot; +
+                                    &quot;{Start;strt}&quot;)
+                            .build())
+                    .build();
+        }
+        return null;
+    }
+
+    @Override
+    public ViewMessage onInlineQuery(String query, String queryId, long chatId, Update update) {
+        return null;
+    }
+
+    @Override
+    public ViewMessage onChosenInlineResult(String resultId, long queryId, String chatId, Update update) {
+        return null;
+    }
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../database/overview/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../database/overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

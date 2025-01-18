@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>One Message Bot Docs</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/groovy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/kotlin.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> One Message Bot Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">О библиотеке</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Установка</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_3">Сторонние зависимости</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="quickstart/">Quickstart</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="database/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="database/mongodb/">MongoDB</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="database/sqlite/">SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="database/custom/">Custom</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Localization</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="localization/localization/">Localization</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ViewMessage</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="viewmessage/listener/">Listener</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="viewmessage/textmessage/">TextMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="viewmessage/inlinekeyboard/">InlineKeyboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="viewmessage/audiomessage/">AudioMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="viewmessage/documentmessage/">DocumentMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="viewmessage/picturemessage.md">PhotoMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="viewmessage/videomessage/">VideoMessage</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Keyboards</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="keyboard/button/">Button</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="keyboard/keyboard/">Keyboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notifications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="notifications/notification/">Notification</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">One Message Bot Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="welcome-to-onemessagebot-documentation">Welcome to OneMessageBot documentation<a class="headerlink" href="#welcome-to-onemessagebot-documentation" title="Permanent link">&para;</a></h1>
+<h2 id="_1">О библиотеке<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Данная библиотека реализует удобный фреймворк для создания ботов.
+Каждый бот созданный с помощью этой библиотеки работает в режиме "одно окно и кнопки".
+Фактически библиотека - это менеджер управления сообщением бота в телеграм,
+который сводит бота к представлению в виде одного окна и клавиатуры.</p>
+<p>Функции:</p>
+<p><img src="/assets/checkbox.png" alt="drawing" width="24"/> MongoDB (встроенная поддержка)</p>
+<p><img src="/assets/checkbox.png" alt="drawing" width="24"/> SQLite  (встроенная поддержка)</p>
+<p><img src="/assets/checkbox.png" alt="drawing" width="24"/> JDBC указание <code>Connection</code></p>
+<p><img src="/assets/checkbox.png" alt="drawing" width="24"/> Создание многостраничных клавиатур</p>
+<p><img src="/assets/checkbox.png" alt="drawing" width="24"/> Многоязычность с возможностью указания собственных переводов</p>
+<p><img src="/assets/checkbox.png" alt="drawing" width="24"/> Обработка событий в методах согласно <code>ViewMessageImpl</code></p>
+<p><img src="/assets/checkbox.png" alt="drawing" width="24"/> Аннотация <code>@ViewMessageListener</code> для регистрации обработчиков событий</p>
+<p><img src="/assets/checkbox.png" alt="drawing" width="24"/> Поддержка уведомлений</p>
+<p><img src="/assets/checkbox.png" alt="drawing" width="24"/> Отправка текстовых сообщений</p>
+<p><img src="/assets/round.png" alt="drawing" width="24"/> Отправка изображений с указанием ссылки на изображение, <code>java.io.File</code>, <code>byte[]</code></p>
+<p><img src="/assets/round.png" alt="drawing" width="24"/> Отправка видео с указанием ссылки на видео, <code>java.io.File</code>, <code>byte[]</code></p>
+<p><img src="/assets/round.png" alt="drawing" width="24"/> Отправка аудио с указанием ссылки на аудио, <code>java.io.File</code>, <code>byte[]</code></p>
+<p><img src="/assets/round.png" alt="drawing" width="24"/> Отправка документов с указанием ссылки на документ, <code>java.io.File</code>, <code>byte[]</code></p>
+<p><img src="/assets/round.png" alt="drawing" width="24"/> Отправка <code>Reply Keyboard</code></p>
+<h2 id="_2">Установка<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Maven:</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;ru.zoommax&lt;/groupId&gt;
+    &lt;artifactId&gt;OneMessageBot&lt;/artifactId&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>Gradle:</p>
+<pre><code class="language-groovy">implementation 'ru.zoommax:OneMessageBot:1.0'
+</code></pre>
+<h2 id="_3">Сторонние зависимости<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong><a href="https://github.com/pengrad/java-telegram-bot-api">java-telegram-bot-api</a></strong></p>
+<ul>
+<li>Репозиторий: <a href="https://github.com/pengrad/java-telegram-bot-api">github.com/pengrad/java-telegram-bot-api</a></li>
+<li>Версия: 7.0.1</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="https://github.com/zoommax/MongoDBConnector">MongoDBConnector</a></strong></p>
+<ul>
+<li>Репозиторий: <a href="https://github.com/zoommax/MongoDBConnector">github.com/zoommax/MongoDBConnector</a></li>
+<li>Версия: 1.1</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="https://projectlombok.org/">Lombok</a></strong></p>
+<ul>
+<li>Официальный сайт: <a href="https://projectlombok.org/">projectlombok.org</a></li>
+<li>Версия: 1.18.30</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="http://www.slf4j.org/">SLF4J</a></strong></p>
+<ul>
+<li>Официальный сайт: <a href="http://www.slf4j.org/">slf4j.org</a></li>
+<li>Версия: 2.0.11</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="https://github.com/ronmamo/reflections">Reflections</a></strong></p>
+<ul>
+<li>Репозиторий: <a href="https://github.com/ronmamo/reflections">github.com/ronmamo/reflections</a></li>
+<li>Версия: 0.10.2</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="https://github.com/FasterXML/jackson-databind">Jackson Databind</a></strong></p>
+<ul>
+<li>Репозиторий: <a href="https://github.com/FasterXML/jackson-databind">github.com/FasterXML/jackson-databind</a></li>
+<li>Версия: 2.18.2</li>
+</ul>
+</li>
+<li>
+<p><strong><a href="https://github.com/xerial/sqlite-jdbc">SQLite JDBC</a></strong></p>
+<ul>
+<li>Репозиторий: <a href="https://github.com/xerial/sqlite-jdbc">github.com/xerial/sqlite-jdbc</a></li>
+<li>Версия: 3.47.2.0  </li>
+</ul>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="quickstart/" class="btn btn-neutral float-right" title="Quickstart">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="quickstart/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-01-18 12:08:42.210995+00:00
+-->

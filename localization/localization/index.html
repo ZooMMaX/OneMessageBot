@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Localization - One Message Bot Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Localization";
+        var mkdocs_page_input_path = "localization/localization.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/java.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/groovy.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/json.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/kotlin.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> One Message Bot Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../quickstart/">Quickstart</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Database</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database/mongodb/">MongoDB</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database/sqlite/">SQLite</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../database/custom/">Custom</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Localization</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Localization</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#default_en_us">default_en_US</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_1">Правила создания локализации</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#_2">Использование локализации в Вашем коде</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ViewMessage</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/listener/">Listener</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/textmessage/">TextMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/inlinekeyboard/">InlineKeyboard</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/audiomessage/">AudioMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/documentmessage/">DocumentMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../viewmessage/picturemessage.md">PhotoMessage</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/videomessage/">VideoMessage</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Keyboards</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../keyboard/button/">Button</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../keyboard/keyboard/">Keyboard</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Notifications</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../notifications/notification/">Notification</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">One Message Bot Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Localization</li>
+      <li class="breadcrumb-item active">Localization</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="localization">Localization<a class="headerlink" href="#localization" title="Permanent link">&para;</a></h1>
+<p>Встроенная поддержка локализации.
+По умолчанию используется английский язык.
+Библиотека имеет две локализации: <code>default_en_US</code> - английский, <code>default_ru_RU</code> - русский.</p>
+<p>Для указания локализации установите соответствующие настройки в <code>BotSettings</code>:</p>
+<ul>
+<li><code>botSettings.setDefaultLanguage("default_en_US")</code> - устанавливает язык по умолчанию. Можно использовать <code>default_en_US</code>, <code>default_ru_RU</code> или собственную локализацию.</li>
+<li><code>botSettings.setLanguageDirPath("/path/to/translations")</code> - устанавливает путь к каталогу с переводами</li>
+</ul>
+<h3 id="default_en_us">default_en_US<a class="headerlink" href="#default_en_us" title="Permanent link">&para;</a></h3>
+<p>Это шаблон локализации для английского языка. При создании локализаций, для изменения перевода внутри библиотеки используется этот шаблон.</p>
+<pre><code class="language-json">{
+  &quot;main&quot;: {
+    &quot;bot_starting&quot;: &quot;Bot starting...&quot;,
+    &quot;notification&quot;: &quot;You have unread notifications&quot;,
+    &quot;notify_close&quot;: &quot;Close&quot;
+  },
+  &quot;keyboard&quot;: {
+    &quot;next_button&quot;: &quot;➡️&quot;,
+    &quot;prev_button&quot;: &quot;⬅️&quot;
+  }
+}
+</code></pre>
+<h3 id="_1">Правила создания локализации<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Все ключи должны быть в нижнем регистре, слова разделяются символом <code>_</code>.</li>
+<li>Все значения должны быть в строковом формате</li>
+<li>Используйте вложенность.</li>
+<li>Файлы должны иметь формат и расширение <code>json</code></li>
+</ol>
+<h3 id="_2">Использование локализации в Вашем коде<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Установите в <code>BotSettings</code> параметры <code>defaultLanguage</code> и <code>languageDirPath</code>.
+Запустите бота. Название языка будет таким же, как и название файла с переводами.</p>
+<pre><code class="language-java">import ru.zoommax.BotApp;
+import ru.zoommax.utils.lang.LocalizationManager;
+
+LocalizationManager localizationManager = BotApp.localizationManager;
+String botStart = localizationManager.getTranslationForLanguage(BotApp.getUserLanguage(&quot;chatId&quot;), &quot;main.bot_starting&quot;);
+</code></pre>
+<p>Доступ к вложенным ключам производится путём передачи строки,
+где разделителем между ключами является символ <code>.</code></p>
+<p>Метод <code>BotApp.getUserLanguage(String chatId)</code> возвращает название языка пользователя, сохранённое в базе данных.</p>
+<p>Метод <code>BotApp.setUserLanguage(String chatId, String language)</code> устанавливает язык пользователя, сохраняя его в базе данных.
+<code>String language</code> - название языка, которое совпадает с названием файла перевода в каталоге переводов.</p>
+<p><code>LocalizationManager</code> можно использовать, как основной менеджер переводов в Вашем проекте.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../database/custom/" class="btn btn-neutral float-left" title="Custom"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../viewmessage/listener/" class="btn btn-neutral float-right" title="Listener">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../database/custom/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../viewmessage/listener/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
