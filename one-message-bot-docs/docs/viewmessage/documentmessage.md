@@ -1,8 +1,8 @@
 # DocumentMessage
 
-Представляет собой билдер класса `DocumentMessage`, который предназначен для отправки документов.
+The `DocumentMessage` class builder is designed for sending documents.
 
-**Примеры:**
+**Examples:**
 
 ```java
 import ru.zoommax.view.DocumentMessage;
@@ -33,15 +33,15 @@ public class example {
 }
 ```
 
-Параметры:
+Parameters:
 
-- `documentAsUrl` - URL-адрес документа
-- `documentAsFile` - файл документа
-- `documentAsBytes` - массив байтов документа
-- `chatId` - идентификатор чата
-- `caption` - описание документа
-- `keyboard` - клавиатура `Keyboard`
-- `onMessageFlag` - флаг, который будет использоваться для обработки сообщений
-- `notify` - признак, что сообщение является уведомлением. По умолчанию `false`
+- `documentAsUrl` - URL of the document
+- `documentAsFile` - document file
+- `documentAsBytes` - byte array of the document
+- `chatId` - chat ID
+- `caption` - description of the document
+- `keyboard` - the keyboard `Keyboard`
+- `onMessageFlag` - flag used for message processing
+- `notify` - indicates whether the message is a notification. Default is `false`.
 
-Может быть возвращён в качестве `ViewMessage` или запущен с помощью метода `run()`.
+It can be returned as a `ViewMessage` or executed using the `run()` method.

@@ -1,6 +1,6 @@
 # Quickstart
 
-## Добавьте зависимость в Ваш проект
+## Add a dependency to your project
 
 Maven:
 ```xml
@@ -16,9 +16,9 @@ Gradle:
 implementation 'ru.zoommax:OneMessageBot:1.0'
 ```
 
-## Создание бота
+## Create a bot
 
-### Указать настройки бота
+### Configure bot settings
 
 ```java
 package test.cl;
@@ -47,19 +47,19 @@ public class Main {
 }
 ```
 
-- `botToken` - токен бота, полученный у @BotFather. Обязательно.
-- `dbType` - тип базы данных. Необязательно. Может быть `DbType.SQLITE`, `DbType.MONGODB` или `DbType.CUSTOM`. По умолчанию `DbType.SQLITE`.
-- `buttonsRows` - количество строк кнопок. Необязательно. По умолчанию 4.
-- `dbName` - имя базы данных. Необязательно. По умолчанию `BotApp`.
-- `languageDirPath` - путь к каталогу с переводами. Необязательно. По умолчанию пустая строка.
-- `defaultLanguage` - язык по умолчанию. Необязательно. По умолчанию `default_en_US`.
-- `dbConnection` - подключение к базе данных. Необязательно. По умолчанию `null`.
-- `dbUrl` - URL подключения к базе данных. Необязательно. По умолчанию `null`.
-- `dbUser` - имя пользователя подключения к базе данных. Необязательно. По умолчанию пустая строка.
-- `dbPassword` - пароль подключения к базе данных. Необязательно. По умолчанию пустая строка.
-- `disableGithubUrl` - подробности в файле [LICENSE](https://github.com/ZooMMaX/OneMessageBot/blob/master/LICENSE).
+- `botToken` - Bot token obtained from @BotFather. Required.
+- `dbType` - Database type. Optional. Can be `DbType.SQLITE`, `DbType.MONGODB`, or `DbType.CUSTOM`. Default: `DbType.SQLITE`.
+- `buttonsRows` - Number of button rows. Optional. Default: 4.
+- `dbName` - Database name. Optional. Default: `BotApp`.
+- `languageDirPath` - Path to the directory with translations. Optional. Default: empty string.
+- `defaultLanguage` - Default language. Optional. Default: `default_en_US`.
+- `dbConnection` - Database connection. Optional. Default: `null`.
+- `dbUrl` - Database connection URL. Optional. Default: `null`.
+- `dbUser` - Database connection username. Optional. Default: empty string.
+- `dbPassword` - Database connection password. Optional. Default: empty string.
+- `disableGithubUrl` - Details can be found in the [LICENSE](https://github.com/ZooMMaX/OneMessageBot/blob/master/LICENSE) file.
 
-### Запустите бота
+### Run the bot
 
 ```java
 package test.cl;
@@ -77,7 +77,7 @@ public class Main {
 }
 ```
 
-### Создайте "окно"
+### Create a "window"
 
 ```java
 package test.cl;

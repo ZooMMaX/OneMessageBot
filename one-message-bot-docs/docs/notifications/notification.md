@@ -1,8 +1,8 @@
 # Notifications
 
-В библиотеке реализована отправка уведомлений в чаты.
+The library supports sending notifications to chats.
 
-Для создания уведомления используйте `CreateNotification` класс:
+To create a notification, use the `CreateNotification` class:
 
 ```java
 public class example {
@@ -20,18 +20,17 @@ public class example {
 }
 ```
 
-В результате будет создано уведомление с текстом `Hello notify` и отправлено в чат с id 123456789
+As a result, a notification with the text `Hello notify` will be created and sent to the chat with ID `123456789`.
 
-Параметры:
+Parameters:
 
-- `message` - текст уведомления
-- `tg_id` - id чата
-- `image` - `String` путь к изображению или видео
-- `notificationType` - тип уведомления, `FULL` или `ALERT`
-- `fileType` - `String` тип файла, `image` или `video`
+- `message` - the text of the notification
+- `tg_id` - the chat ID
+- `image` - a `String` path to the image or video
+- `notificationType` - the type of notification, either `FULL` or `ALERT`
+- `fileType` - a `String` representing the file type, either `image` or `video`
 
-`NotificationType` определяет тип уведомления:
+`NotificationType` defines the type of notification:
 
-`FULL` - полное уведомление (показывается сразу, под сообщением размещаются кнопки других не прочитанных уведомлений),
-
-`ALERT` - в чате появляется сообщение о том, что есть не прочитанные уведомления, под которыми размещаются кнопки других не прочитанных уведомлений. Нажатие на кнопку уведомления в чате приводит к открытию всплывающего окна ALERT согласно документации Telegram Bot API.
+- `FULL` - full notification (appears immediately, with buttons for other unread notifications displayed under the message),
+- `ALERT` - a message appears in the chat indicating there are unread notifications, with buttons for other unread notifications displayed under it. Clicking on the notification button opens a pop-up ALERT according to the Telegram Bot API documentation.

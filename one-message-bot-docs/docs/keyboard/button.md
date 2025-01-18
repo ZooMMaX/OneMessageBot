@@ -1,91 +1,88 @@
 # Button
-**Реализация кнопки в приложении (боте)**
+**Implementation of a Button in the Application (Bot)**
 
-Кнопки в телеграм представляют собой текст на кнопке и действие,
-которое будет выполняться при нажатии на кнопку.
+Telegram buttons consist of the text displayed on the button and the action executed when the button is pressed.
 
-Библиотека поддерживает создание кнопок с:
-- callback действием
-- ссылкой на внешний ресурс
-- открытием телеграм мини приложения
+The library supports creating buttons with the following functionalities:
+- Callback actions
+- Links to external resources
+- Opening Telegram Mini Apps
 
-При создании кнопок с помощью строки следует учитывать зарезервированные
-символы:
+When creating buttons using strings, consider reserved characters:
 
 - `{`
 - `}`
 - `;`
 
-В случае необходимости эти символы можно экранировать, используя символ `\`.
+If needed, these characters can be escaped using the `\` character.
 
-## Способы создания кнопки
+## Methods to Create a Button
 
-### Форматированная строка
+### Formatted String
 
-Для этого создайте строку в формате `{text_on_button;button_action}`
+To use this method, create a string in the format `{text_on_button;button_action}`.
 
-- `text_on_button` - текст на кнопке
-- `button_action` - действие, которое будет выполняться при нажатии на кнопку
+- `text_on_button` - the text displayed on the button
+- `button_action` - the action executed when the button is pressed
 
-Если `button_action` начинается с:
+If `button_action` starts with:
 
-- `mapp`, то кнопка будет открывать телеграм мини приложение.
-- `http` или `tg`, то кнопка будет открывать ссылку.
-- в остальных случаях кнопка будет выполнять callback действие.
+- `mapp`, the button will open a Telegram Mini App.
+- `http` or `tg`, the button will open a link.
+- In other cases, the button will perform a callback action.
 
-**Примеры:**
+**Examples:**
 
 ```java
 import ru.zoommax.utils.keyboard.Button;
 
-Button button1 = new Button("{Я открою телеграм мини приложение;mapphttp://example.com}");
-Button button2 = new Button("{Я открою ссылку;http://example.com}");
-Button button3 = new Button("{Я тоже открою ссылку;tg://username}");
-Button button4 = new Button("{Я выполню callback действие;any_data}");
+Button button1 = new Button("{I will open a Telegram Mini App;mapphttp://example.com}");
+Button button2 = new Button("{I will open a link;http://example.com}");
+Button button3 = new Button("{I will also open a link;tg://username}");
+Button button4 = new Button("{I will perform a callback action;any_data}");
 ```
 
-### Объект
+### Object
 
-Для этого создайте объект класса `Button` с полями `text` и `action`.
+To use this method, create an instance of the `Button` class with `text` and `action` fields.
 
-- `text` - текст на кнопке
-- `action` - действие, которое будет выполняться при нажатии на кнопку
+- `text` - the text displayed on the button
+- `action` - the action executed when the button is pressed
 
-Если `action` начинается с:
+If `action` starts with:
 
-- `mapp`, то кнопка будет открывать телеграм мини приложение
-- `http` или `tg`, то кнопка будет открывать ссылку
-- в остальных случаях кнопка будет выполнять callback действие
+- `mapp`, the button will open a Telegram Mini App.
+- `http` or `tg`, the button will open a link.
+- In other cases, the button will perform a callback action.
 
-**Примеры:**
+**Examples:**
 
 ```java
-
-Button button1 = new Button("Я открою телеграм мини приложение", "mapphttp://example.com");
-Button button2 = new Button("Я открою ссылку", "http://example.com");
-Button button3 = new Button("Я тоже открою ссылку", "tg://username");
-Button button4 = new Button("Я выполню callback действие", "any_data");
+Button button1 = new Button("I will open a Telegram Mini App", "mapphttp://example.com");
+Button button2 = new Button("I will open a link", "http://example.com");
+Button button3 = new Button("I will also open a link", "tg://username");
+Button button4 = new Button("I will perform a callback action", "any_data");
 ```
 
-### Объект с указанием типа
+### Object with Type Specification
 
-Для этого создайте объект класса `Button` с полями `text`, `action` и `type`
+To use this method, create an instance of the `Button` class with `text`, `action`, and `type` fields.
 
-- `text` - текст на кнопке
-- `action` - действие, которое будет выполняться при нажатии на кнопку
-- `type` - тип кнопки
+- `text` - the text displayed on the button
+- `action` - the action executed when the button is pressed
+- `type` - the type of the button
 
-`type` может принимать значения:
+`type` can take the following values:
 
-- `CALLBACK` - callback действие
-- `LINK` - ссылка
-- `MINI_APP` - телеграм мини приложение
+- `CALLBACK` - callback action
+- `LINK` - link
+- `MINI_APP` - Telegram Mini App
 
-**Примеры:**
+**Examples:**
 
 ```java
-Button button1 = new Button("Я открою телеграм мини приложение", "http://example.com", ButtonType.MINI_APP);
-Button button2 = new Button("Я открою ссылку", "http://example.com", ButtonType.LINK);
-Button button3 = new Button("Я тоже открою ссылку", "tg://username", ButtonType.LINK);
-Button button4 = new Button("Я выполню callback действие", "any_data", ButtonType.CALLBACK);
+Button button1 = new Button("I will open a Telegram Mini App", "http://example.com", ButtonType.MINI_APP);
+Button button2 = new Button("I will open a link", "http://example.com", ButtonType.LINK);
+Button button3 = new Button("I will also open a link", "tg://username", ButtonType.LINK);
+Button button4 = new Button("I will perform a callback action", "any_data", ButtonType.CALLBACK);
 ```

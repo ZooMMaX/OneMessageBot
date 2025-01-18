@@ -1,11 +1,8 @@
 # Listener
 
-Чтобы создать обработчик событий, необходимо создать класс,
-реализующий интерфейс `ViewMessageImpl`, реализовать его методы
-и добавить к классу аннотацию `@ViewMessageListener`.
-Библиотека выполняет broadcast-рассылку событий классам, помеченным аннотацией `@ViewMessageListener`.
+To create an event handler, you need to create a class that implements the `ViewMessageImpl` interface, implement its methods, and add the `@ViewMessageListener` annotation to the class. The library performs a broadcast of events to the classes marked with the `@ViewMessageListener` annotation.
 
-Например:
+For example:
 
 ```java
 import ru.zoommax.utils.ViewMessageListener;
@@ -46,29 +43,24 @@ public class Start implements ViewMessageImpl {
     public ViewMessage onChosenInlineResult(String resultId, long queryId, String chatId, Update update) {
         return null;
     }
-} 
+}
 ```
 
-Класс выше реализует эхо-бота.
+The above class implements an echo bot.
 
-`ViewMessage` может быть одним из следующих типов:
+The `ViewMessage` can be one of the following types:
 
-- `TextMessage` - для отправки текстовых сообщений
-- `PhotoMessage` - для отправки фотографий
-- `DocumentMessage` - для отправки документов
-- `VideoMessage` - для отправки видео
-- `AudioMessage` - для отправки аудио
-- `InlineKeyboard` - для отправки кнопок в виде клавиатуры
+- `TextMessage` - for sending text messages
+- `PhotoMessage` - for sending photos
+- `DocumentMessage` - for sending documents
+- `VideoMessage` - for sending videos
+- `AudioMessage` - for sending audio
+- `InlineKeyboard` - for sending inline keyboard buttons
 
-Метод `onMessage` обрабатывает текстовые сообщения от пользователя.
-Может использоваться для ввода произвольных данных пользователем.
-Для обработки произвольных данных в конкретном обработчике установите
-`onMessageFlag` при создании любого типа сообщения.
-Он будет сохранён в базу данных и передан в метод `onMessage` в качестве
-`onMessageFlag` при возникновении события. `onMessageFlag` автоматически очищается при возникновении события, но после его передачи.
+The `onMessage` method handles text messages from the user and can be used for custom data input by the user. To process custom data in a specific handler, set the `onMessageFlag` when creating any type of message. It will be saved in the database and passed to the `onMessage` method as `onMessageFlag` when the event occurs. The `onMessageFlag` is automatically cleared when the event occurs but is passed as part of the event.
 
-Метод `onCommand` обрабатывает команды от пользователя, начинающиеся с `/`.
+The `onCommand` method handles commands from the user that start with `/`.
 
-Метод `onPicture` обрабатывает изображения, которые присылаются пользователем.
+The `onPicture` method handles images sent by the user.
 
-Метод `onCallbackQuery` обрабатывает запросы от кнопок в клавиатуре.
+The `onCallbackQuery` method handles requests from keyboard buttons.

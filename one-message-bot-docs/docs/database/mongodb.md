@@ -1,8 +1,8 @@
 # Database MongoDB
 
-Встроенная поддержка MongoDB.
+Built-in support for MongoDB.
 
-Для указания MongoDB установите соответствующие настройки в `BotSettings`:
+To configure MongoDB, set the appropriate settings in `BotSettings`:
 
 - `botSettings.setDbType(DbType.MONGODB)`
 - `botSettings.setDbName("name")`

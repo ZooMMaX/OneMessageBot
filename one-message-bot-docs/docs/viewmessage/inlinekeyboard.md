@@ -1,8 +1,8 @@
 # InlineKeyboard
 
-Представляет собой билдер класса `InlineKeyboard`, который предназначен для отправки кнопок в виде клавиатуры.
+The `InlineKeyboard` class builder is designed for sending buttons in the form of a keyboard.
 
-**Примеры:**
+**Examples:**
 
 ```java
 import ru.zoommax.view.InlineKeyboard;
@@ -22,9 +22,9 @@ public class example {
 }
 ```
 
-Параметры:
+Parameters:
 
-- `chatId` - идентификатор чата
-- `code` - код клавиатуры
+- `chatId` - chat ID
+- `code` - keyboard code
 
-Может быть возвращён в качестве `ViewMessage` или запущен с помощью метода `run()`.
+It can be returned as a `ViewMessage` or executed using the `run()` method.

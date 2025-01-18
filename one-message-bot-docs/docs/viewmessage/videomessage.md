@@ -1,8 +1,8 @@
 # VideoMessage
 
-Представляет собой билдер класса `VideoMessage`, который предназначен для отправки видео.
+Represents the builder class `VideoMessage`, which is intended for sending videos.
 
-**Примеры:**
+**Examples:**
 
 ```java
 import ru.zoommax.view.VideoMessage;
@@ -33,15 +33,15 @@ public class example {
 }
 ```
 
-Параметры:
+Parameters:
 
-- `chatId` - идентификатор чата
-- `videoAsUrl` - ссылка на видео
-- `videoAsFile` - файл видео
-- `videoAsBytes` - байтовый массив видео
-- `caption` - текст
-- `keyboard` - клавиатура `Keyboard`
-- `onMessageFlag` - флаг, который будет использоваться для обработки сообщений
-- `notify` - признак, что сообщение является уведомлением. По умолчанию `false`
+- `chatId` - the chat identifier
+- `videoAsUrl` - the URL of the video
+- `videoAsFile` - the video file
+- `videoAsBytes` - the byte array of the video
+- `caption` - the caption text
+- `keyboard` - the keyboard in `Keyboard` format
+- `onMessageFlag` - the flag used for processing messages
+- `notify` - indicates whether the message is a notification. By default, it's `false`
 
-Может быть возвращён в качестве `ViewMessage` или запущен с помощью метода `run()`.
+The message can be returned as a `ViewMessage` or run using the `run()` method.

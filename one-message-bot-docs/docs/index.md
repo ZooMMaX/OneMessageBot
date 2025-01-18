@@ -1,42 +1,41 @@
-# Welcome to OneMessageBot documentation
+# Welcome to OneMessageBot Documentation
 
-## О библиотеке
-Данная библиотека реализует удобный фреймворк для создания ботов.
-Каждый бот созданный с помощью этой библиотеки работает в режиме "одно окно и кнопки".
-Фактически библиотека - это менеджер управления сообщением бота в телеграм,
-который сводит бота к представлению в виде одного окна и клавиатуры.
+## About the Library
+This library provides a convenient framework for creating bots.  
+Every bot created using this library operates in a "single window and buttons" mode.  
+Essentially, the library is a bot message manager for Telegram that simplifies bot functionality to a single window and keyboard interface.
 
-Функции:
+Features:
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> MongoDB (встроенная поддержка)
+<img src="assets/checkbox.png" alt="drawing" width="24"/> MongoDB (built-in support)
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> SQLite  (встроенная поддержка)
+<img src="assets/checkbox.png" alt="drawing" width="24"/> SQLite (built-in support)
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> JDBC указание `Connection`
+<img src="assets/checkbox.png" alt="drawing" width="24"/> JDBC support with `Connection` specification
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> Создание многостраничных клавиатур
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Creation of multi-page keyboards
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> Многоязычность с возможностью указания собственных переводов
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Multilingual support with the ability to provide custom translations
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> Обработка событий в методах согласно `ViewMessageImpl`
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Event handling in methods using `ViewMessageImpl`
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> Аннотация `@ViewMessageListener` для регистрации обработчиков событий
+<img src="assets/checkbox.png" alt="drawing" width="24"/> `@ViewMessageListener` annotation for registering event handlers
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> Поддержка уведомлений
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Notification support
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка текстовых сообщений
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Sending text messages
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка изображений с указанием ссылки на изображение, `java.io.File`, `byte[]`
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Sending images with links, `java.io.File`, or `byte[]`
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка видео с указанием ссылки на видео, `java.io.File`, `byte[]`
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Sending videos with links, `java.io.File`, or `byte[]`
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка аудио с указанием ссылки на аудио, `java.io.File`, `byte[]`
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Sending audio with links, `java.io.File`, or `byte[]`
 
-<img src="assets/checkbox.png" alt="drawing" width="24"/> Отправка документов с указанием ссылки на документ, `java.io.File`, `byte[]`
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Sending documents with links, `java.io.File`, or `byte[]`
 
-<img src="assets/round.png" alt="drawing" width="24"/> Отправка `Reply Keyboard`
+<img src="assets/round.png" alt="drawing" width="24"/> Sending `Reply Keyboard`
 
-## Установка
+## Installation
 
 Maven:
 
@@ -54,32 +53,32 @@ Gradle:
 implementation 'ru.zoommax:OneMessageBot:1.0'
 ```
 
-## Сторонние зависимости
+## Third-party Dependencies
 
 1. **[java-telegram-bot-api](https://github.com/pengrad/java-telegram-bot-api)**
-    - Репозиторий: [github.com/pengrad/java-telegram-bot-api](https://github.com/pengrad/java-telegram-bot-api)
-    - Версия: 7.0.1
+   - Repository: [github.com/pengrad/java-telegram-bot-api](https://github.com/pengrad/java-telegram-bot-api)
+   - Version: 7.0.1
 
 2. **[MongoDBConnector](https://github.com/zoommax/MongoDBConnector)**
-    - Репозиторий: [github.com/zoommax/MongoDBConnector](https://github.com/zoommax/MongoDBConnector)
-    - Версия: 1.1
+   - Repository: [github.com/zoommax/MongoDBConnector](https://github.com/zoommax/MongoDBConnector)
+   - Version: 1.1
 
 3. **[Lombok](https://projectlombok.org/)**
-    - Официальный сайт: [projectlombok.org](https://projectlombok.org/)
-    - Версия: 1.18.30
+   - Official site: [projectlombok.org](https://projectlombok.org/)
+   - Version: 1.18.30
 
 4. **[SLF4J](http://www.slf4j.org/)**
-    - Официальный сайт: [slf4j.org](http://www.slf4j.org/)
-    - Версия: 2.0.11
+   - Official site: [slf4j.org](http://www.slf4j.org/)
+   - Version: 2.0.11
 
 5. **[Reflections](https://github.com/ronmamo/reflections)**
-    - Репозиторий: [github.com/ronmamo/reflections](https://github.com/ronmamo/reflections)
-    - Версия: 0.10.2
+   - Repository: [github.com/ronmamo/reflections](https://github.com/ronmamo/reflections)
+   - Version: 0.10.2
 
 6. **[Jackson Databind](https://github.com/FasterXML/jackson-databind)**
-    - Репозиторий: [github.com/FasterXML/jackson-databind](https://github.com/FasterXML/jackson-databind)
-    - Версия: 2.18.2
+   - Repository: [github.com/FasterXML/jackson-databind](https://github.com/FasterXML/jackson-databind)
+   - Version: 2.18.2
 
 7. **[SQLite JDBC](https://github.com/xerial/sqlite-jdbc)**
-    - Репозиторий: [github.com/xerial/sqlite-jdbc](https://github.com/xerial/sqlite-jdbc)
-    - Версия: 3.47.2.0  
+   - Repository: [github.com/xerial/sqlite-jdbc](https://github.com/xerial/sqlite-jdbc)
+   - Version: 3.47.2.0

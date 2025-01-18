@@ -1,104 +1,100 @@
 # Keyboard
-**Реализация клавиатуры в приложении (боте)**
+**Implementation of a Keyboard in the Application (Bot)**
 
-Клавиатуры в телеграм представляют собой массив [Button](button.md).
+Keyboards in Telegram consist of an array of [Button](button.md) objects.
 
-Создать клавиатуру можно с помощью `bulder` класса `Keyboard`.
+You can create a keyboard using the `builder` class `Keyboard`.
 
-В `bulder` нужно указать:
+In the `builder`, you need to specify:
 
-- `chatId` - id чата, в котором будет отображаться клавиатура
+- `chatId` - the ID of the chat where the keyboard will be displayed
 
-и
+and either:
 
-- - `code` - отформатированный код клавиатуры
+- `code` - formatted keyboard code
 
-или
+or:
 
-- - `keyboardButtons` - список кнопок клавиатуры
+- `keyboardButtons` - a list of keyboard buttons
 
-В отформатированной строке для создания новой строки кнопок используется разделитель `\n`.
-
----
+In a formatted string, the `\n` separator is used to create a new row of buttons.
 
 ---
 
-**Примеры:**
+## Examples
 
-Установка клавиатуры через `code`:
+### Setting the Keyboard via `code`
 
-Кнопки будут одна под другой.
+Buttons will be arranged vertically.
 
 ```java
 import ru.zoommax.utils.keyboard.Keyboard;
 
 Keyboard keyboard = Keyboard.builder()
     .chatId(123456789)
-    .code("{Я открою ссылку;http://example.com}\n{Я выполню callback действие;any_data}")
+    .code("{I will open a link;http://example.com}\n{I will perform a callback action;any_data}")
     .build();
 ```
 
-Две рядом и третья под ними.
+Two buttons in one row and a third button below them.
 
 ```java
 import ru.zoommax.utils.keyboard.Keyboard;
 
 Keyboard keyboard = Keyboard.builder()
     .chatId(123456789)
-    .code("{Я открою ссылку;http://example.com}{Я выполню callback действие;any_data}\n{Я тоже открою ссылку;tg://username}")
-        .build();
+    .code("{I will open a link;http://example.com}{I will perform a callback action;any_data}\n{I will also open a link;tg://username}")
+    .build();
 ```
 
-Также можно добавить любые символы за пределами `{` и `}`. Такой подход даст возможность
-сделать визуальное разделение кнопок в коде. Все символы за пределами `{` и `}`, кроме `\n` будут
-игнорироваться.
+You can also add any characters outside of `{` and `}` to visually separate buttons in the code. All characters outside of `{` and `}` (except `\n`) will be ignored.
 
 ```java
 import ru.zoommax.utils.keyboard.Keyboard;
 
 Keyboard keyboard = Keyboard.builder()
     .chatId(123456789)
-    .code("{Я открою ссылку;http://example.com}{Я выполню callback действие;any_data}\n" +
-            "_____>!@_________{Я тоже открою ссылку;tg://username}______acfd_______")
-        .build();
+    .code("{I will open a link;http://example.com}{I will perform a callback action;any_data}\n" +
+          "_____>!@_________{I will also open a link;tg://username}______acfd_______")
+    .build();
 ```
 
 ---
 
-Установка клавиатуры через `keyboardButtons`:
+### Setting the Keyboard via `keyboardButtons`
 
-Кнопки будут одна под другой.
+Buttons will be arranged vertically.
 
 ```java
 import ru.zoommax.utils.keyboard.Button;
 import ru.zoommax.utils.keyboard.Keyboard;
 
 import java.util.List;
+import java.util.ArrayList;
 
 List<Button> buttons = new ArrayList<>();
-buttons.
-
-add(new Button("Я открою ссылку", "http://example.com"));
-        buttons.
-
-add(new Button("Я выполню callback действие", "any_data"));
+buttons.add(new Button("I will open a link", "http://example.com"));
+buttons.add(new Button("I will perform a callback action", "any_data"));
 
 List<Button> buttons2 = new ArrayList<>();
-buttons2.
-
-add(new Button("Я тоже открою ссылку", "tg://username"));
+buttons2.add(new Button("I will also open a link", "tg://username"));
 
 List<List<Button>> keyboardButtons = new ArrayList<>();
 keyboardButtons.add(buttons);
 keyboardButtons.add(buttons2);
 
 Keyboard keyboard = Keyboard.builder()
-        .chatId(123456789)
-        .keyboardButtons(keyboardButtons).build();
+    .chatId(123456789)
+    .keyboardButtons(keyboardButtons)
+    .build();
 ```
 
 ---
 
-Если установить `code` и `keyboardButtons` одновременно,
-то будет выброшено исключение
-`IllegalArgumentException("Keyboard cannot have both code and buttons")`.
+### Note
+
+If both `code` and `keyboardButtons` are set simultaneously, an exception will be thrown:
+
+```java
+IllegalArgumentException("Keyboard cannot have both code and buttons")
+```

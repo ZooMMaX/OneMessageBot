@@ -1,6 +1,6 @@
 # TextMessage
 
-Представляет собой билдер класса `TextMessage`, который предназначен для отправки текстовых сообщений.
+Represents the builder class `TextMessage`, which is intended for sending text messages.
 
 ```java
 import ru.zoommax.view.TextMessage;
@@ -24,12 +24,12 @@ public class example {
 }
 ```
 
-Параметры:
+Parameters:
 
-- `text` - текст сообщения
-- `chatId` - идентификатор чата
-- `keyboard` - клавиатура `Keyboard`
-- `onMessageFlag` - флаг, который будет использоваться для обработки сообщений
-- `notify` - признак, что сообщение является уведомлением. По умолчанию `false`
+- `text` - the text of the message
+- `chatId` - the chat identifier
+- `keyboard` - the keyboard in `Keyboard` format
+- `onMessageFlag` - the flag used for processing messages
+- `notify` - indicates whether the message is a notification. By default, it's `false`
 
-Может быть возвращён в качестве `ViewMessage` или запущен с помощью метода `run()`.
+The message can be returned as a `ViewMessage` or run using the `run()` method.

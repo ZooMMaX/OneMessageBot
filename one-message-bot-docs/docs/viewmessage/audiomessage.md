@@ -1,8 +1,8 @@
 # AudioMessage
 
-Представляет собой билдер класса `AudioMessage`, который предназначен для отправки аудиофайлов.
+The `AudioMessage` class builder is designed for sending audio files.
 
-**Примеры:**
+**Examples:**
 
 ```java
 import ru.zoommax.view.AudioMessage;
@@ -33,15 +33,15 @@ public class example {
 }
 ```
 
-Параметры:
+Parameters:
 
-- `chatId` - идентификатор чата
-- `audioAsUrl` - URL-адрес аудиофайла
-- `audioAsFile` - аудиофайл
-- `audioAsBytes` - байты аудиофайла
-- `caption` - подпись к аудиофайлу
-- `keyboard` - клавиатура `Keyboard`
-- `onMessageFlag` - флаг, который будет использоваться для обработки сообщений
-- `notify` - признак, что сообщение является уведомлением. По умолчанию `false`
+- `chatId` - the chat ID
+- `audioAsUrl` - the URL of the audio file
+- `audioAsFile` - the audio file
+- `audioAsBytes` - the bytes of the audio file
+- `caption` - the caption for the audio file
+- `keyboard` - the keyboard `Keyboard`
+- `onMessageFlag` - the flag used for message processing
+- `notify` - indicates whether the message is a notification. Default is `false`.
 
-Может быть возвращён в качестве `ViewMessage` или запущен с помощью метода `run()`.
+It can be returned as a `ViewMessage` or executed using the `run()` method.

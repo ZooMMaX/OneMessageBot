@@ -1,17 +1,16 @@
 # Localization
 
-Встроенная поддержка локализации.
-По умолчанию используется английский язык.
-Библиотека имеет две локализации: `default_en_US` - английский, `default_ru_RU` - русский.
+Built-in localization support.  
+By default, English is used as the language. The library supports two localizations: `default_en_US` for English and `default_ru_RU` for Russian.
 
-Для указания локализации установите соответствующие настройки в `BotSettings`:
+To set the localization, configure the corresponding settings in `BotSettings`:
 
-- `botSettings.setDefaultLanguage("default_en_US")` - устанавливает язык по умолчанию. Можно использовать `default_en_US`, `default_ru_RU` или собственную локализацию.
-- `botSettings.setLanguageDirPath("/path/to/translations")` - устанавливает путь к каталогу с переводами
+- `botSettings.setDefaultLanguage("default_en_US")` - sets the default language. You can use `default_en_US`, `default_ru_RU`, or your custom localization.
+- `botSettings.setLanguageDirPath("/path/to/translations")` - sets the path to the directory with translations.
 
 ### default_en_US
 
-Это шаблон локализации для английского языка. При создании локализаций, для изменения перевода внутри библиотеки используется этот шаблон.
+This is the localization template for the English language. When creating localizations, this template is used to modify the translation inside the library.
 
 ```json
 {
@@ -27,17 +26,17 @@
 }
 ```
 
-### Правила создания локализации
+### Localization Creation Rules
 
-1. Все ключи должны быть в нижнем регистре, слова разделяются символом `_`.
-2. Все значения должны быть в строковом формате
-3. Используйте вложенность.
-4. Файлы должны иметь формат и расширение `json`
+1. All keys should be in lowercase, with words separated by underscores (`_`).
+2. All values must be in string format.
+3. Use nesting.
+4. Files should be in `json` format and extension.
 
-### Использование локализации в Вашем коде
+### Using Localization in Your Code
 
-Установите в `BotSettings` параметры `defaultLanguage` и `languageDirPath`.
-Запустите бота. Название языка будет таким же, как и название файла с переводами.
+Set the `defaultLanguage` and `languageDirPath` parameters in `BotSettings`.  
+Start the bot. The language name will be the same as the name of the translation file.
 
 ```java
 import ru.zoommax.BotApp;
@@ -47,12 +46,11 @@ LocalizationManager localizationManager = BotApp.localizationManager;
 String botStart = localizationManager.getTranslationForLanguage(BotApp.getUserLanguage("chatId"), "main.bot_starting");
 ```
 
-Доступ к вложенным ключам производится путём передачи строки,
-где разделителем между ключами является символ `.`
+Access nested keys by passing a string, where the separator between keys is the period (`.`) character.
 
-Метод `BotApp.getUserLanguage(String chatId)` возвращает название языка пользователя, сохранённое в базе данных.
+The method `BotApp.getUserLanguage(String chatId)` returns the user's language name, which is saved in the database.
 
-Метод `BotApp.setUserLanguage(String chatId, String language)` устанавливает язык пользователя, сохраняя его в базе данных.
-`String language` - название языка, которое совпадает с названием файла перевода в каталоге переводов.
+The method `BotApp.setUserLanguage(String chatId, String language)` sets the user's language and saves it in the database.  
+`String language` - the language name, which matches the translation file name in the translation directory.
 
-`LocalizationManager` можно использовать, как основной менеджер переводов в Вашем проекте.
+`LocalizationManager` can be used as the main translation manager in your project.

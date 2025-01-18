@@ -1,6 +1,6 @@
 # PhotoMessage
 
-Представляет собой билдер класса `PhotoMessage`, который предназначен для отправки изображений.
+Represents the builder class `PhotoMessage`, which is intended for sending images.
 
 ```java
 import ru.zoommax.view.PhotoMessage;
@@ -31,15 +31,15 @@ public class example {
 }
 ```
 
-Параметры:
+Parameters:
 
-- `chatId` - идентификатор чата
-- `photoAsUrl` - URL изображения
-- `photoAsFile` - файл изображения
-- `photoAsBytes` - байты изображения
-- `keyboard` - клавиатура в виде `Keyboard`
-- `caption` - описание изображения
-- `onMessageFlag` - флаг, который будет использоваться для обработки сообщений
-- `notify` - признак, что сообщение является уведомлением. По умолчанию `false`
+- `chatId` - the chat identifier
+- `photoAsUrl` - the URL of the image
+- `photoAsFile` - the image file
+- `photoAsBytes` - the bytes of the image
+- `keyboard` - the keyboard in the `Keyboard` format
+- `caption` - the description of the image
+- `onMessageFlag` - the flag used for processing messages
+- `notify` - indicates whether the message is a notification. By default, it's `false`
 
-Может быть возвращён в качестве `ViewMessage` или запущен с помощью метода `run()`.
+The message can be returned as a `ViewMessage` or run using the `run()` method.

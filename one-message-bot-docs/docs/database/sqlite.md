@@ -1,11 +1,11 @@
 # Database SQLite
 
-Встроенная поддержка SQLite.
+Built-in support for SQLite.
 
-Для указания SQLite установите соответствующие настройки в `BotSettings`:
+To configure SQLite, set the appropriate settings in `BotSettings`:
 
 - `botSettings.setDbType(DbType.SQLITE)`
 - `botSettings.setDbName("name")`
 
-Чтобы настроить путь к базе данных, установите `botSettings.setDbUrl("jdbc:sqlite:./path/to/")`,
-имя базы данных будет использоваться автоматически из `botSettings.setDbName("name")`.
+To specify the database path, set `botSettings.setDbUrl("jdbc:sqlite:./path/to/")`.  
+The database name will be automatically applied from `botSettings.setDbName("name")`.
