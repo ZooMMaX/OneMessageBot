@@ -23,6 +23,14 @@
 
 [OneMessageBot Quick Start](https://zoommax.github.io/OneMessageBot/quickstart/)
 
+## Example bot
+
+### Example of a bot based on the OneMessageBot library
+
+[Source code](https://github.com/ZooMMaX/ExampleOneMessageBot)
+
+[Bot in Telegram](https://t.me/eombl_bot)
+
 ## About the Library
 This library provides a convenient framework for creating bots.  
 Every bot created using this library operates in a "single window and buttons" mode.  
