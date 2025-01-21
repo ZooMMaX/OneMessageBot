@@ -43,14 +43,14 @@ import ru.zoommax.BotApp;
 import ru.zoommax.utils.lang.LocalizationManager;
 
 LocalizationManager localizationManager = BotApp.localizationManager;
-String botStart = localizationManager.getTranslationForLanguage(UserLanguage.getUserLanguage("chatId"), "main.bot_starting");
+String botStart = localizationManager.getTranslationForLanguage(UserLanguage.getUserLanguage(chatId), "main.bot_starting");
 ```
 
 Access nested keys by passing a string, where the separator between keys is the period (`.`) character.
 
-The method `UserLanguage.getUserLanguage(String chatId)` returns the user's language name, which is saved in the database.
+The method `UserLanguage.getUserLanguage(long chatId)` returns the user's language name, which is saved in the database.
 
-The method `UserLanguage.setUserLanguage(String chatId, String language)` sets the user's language and saves it in the database.  
+The method `UserLanguage.setUserLanguage(long chatId, String language)` sets the user's language and saves it in the database.  
 `String language` - the language name, which matches the translation file name in the translation directory.
 
 `LocalizationManager` can be used as the main translation manager in your project.
