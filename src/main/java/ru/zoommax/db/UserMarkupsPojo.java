@@ -19,8 +19,8 @@ import static com.mongodb.client.model.Filters.eq;
 @Getter
 public class UserMarkupsPojo extends MongoDBConnector {
     private String tg_id;
-    private String code;
-    private String codeNotify;
+    private String code = "";
+    private String codeNotify = "";
 
     public UserMarkupsPojo() {
     }

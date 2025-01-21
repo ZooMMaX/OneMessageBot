@@ -279,6 +279,11 @@ public class BotApp implements Runnable {
                     userPojo.setLastMessageId(lastMessageId);
                     userPojo.setViewMessageId(0);
                     userPojo.insert();
+                    UserMarkupsPojo userMarkupsPojo = new UserMarkupsPojo();
+                    userMarkupsPojo.setTg_id(String.valueOf(chatId));
+                    userMarkupsPojo.setCode("");
+                    userMarkupsPojo.setCodeNotify("");
+                    userMarkupsPojo.insert();
                 }else {
                     if (update.callbackQuery() != null){
                         userPojo.setLastMessageId(-1);
