@@ -54,6 +54,7 @@ public class Keyboard {
 
         UserMarkupsPojo userMarkupsPojo = new UserMarkupsPojo();
         userMarkupsPojo.setTg_id(String.valueOf(chatId));
+        userMarkupsPojo = userMarkupsPojo.find();
         if (!notify) {
             userMarkupsPojo.setCode(keyboardButtonsToString());
         } else {
