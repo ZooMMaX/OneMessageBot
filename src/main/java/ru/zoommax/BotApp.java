@@ -536,20 +536,4 @@ public class BotApp implements Runnable {
             }
         });
     }
-
-    public static void setUserLanguage(String chatId, String language) {
-        executor.submit(() -> {
-            UserPojo userPojo = new UserPojo();
-            userPojo.setChatId(Long.parseLong(chatId));
-            userPojo.setLanguage(language);
-            userPojo.update();
-        });
-    }
-
-    public static String getUserLanguage(String chatId) {
-        UserPojo userPojo = new UserPojo();
-        userPojo.setChatId(Long.parseLong(chatId));
-        userPojo = userPojo.find();
-        return userPojo.getLanguage();
-    }
 }
