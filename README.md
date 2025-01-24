@@ -9,7 +9,17 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/ZooMMaX/OneMessageBot?style=social)
 ![Maven Central Version](https://img.shields.io/maven-central/v/ru.zoommax/OneMessageBot?style=plastic)
 
+<details>
+<summary>How to read version</summary>
 
+The version is marked with four numbers separated by a dot X.Y.W.Z
+- X - Changes when changes affecting backward compatibility are made (for example, deprecated methods are removed)
+- Y - Changes when external dependencies are updated, removed, or changed
+- W - Changes when a new feature is added to the library
+- Z - Changes when fixes are applied to existing code.
+
+The values ​​are not reset. They only increase.
+</details>
 
 ## License
 
