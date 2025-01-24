@@ -34,6 +34,8 @@ public class AudioMessage implements ViewMessage {
         } else if (audiosAsFiles != null) {
             sendAudios(chatId, audiosAsFiles, captions, onMessageFlag, notify);
         }
-        sendKeyboard(chatId, keyboard, onMessageFlag, notify);
+        if (keyboard != null) {
+            sendKeyboard(chatId, keyboard, onMessageFlag, notify);
+        }
     }
 }

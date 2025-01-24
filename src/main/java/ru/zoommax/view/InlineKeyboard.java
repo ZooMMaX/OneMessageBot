@@ -12,6 +12,8 @@ public class InlineKeyboard implements ViewMessage {
 
     @Override
     public void run() {
-        sendKeyboard(chatId, keyboard, onMessageFlag, notify);
+        if (keyboard != null) {
+            sendKeyboard(chatId, keyboard, onMessageFlag, notify);
+        }
     }
 }

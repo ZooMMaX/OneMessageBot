@@ -34,6 +34,8 @@ public class VideoMessage implements ViewMessage {
         } else if (videosAsFiles != null) {
             sendVideos(chatId, videosAsFiles, captions, onMessageFlag, notify);
         }
-        sendKeyboard(chatId, keyboard, onMessageFlag, notify);
+        if (keyboard != null) {
+            sendKeyboard(chatId, keyboard, onMessageFlag, notify);
+        }
     }
 }

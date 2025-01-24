@@ -34,6 +34,8 @@ public class PhotoMessage implements ViewMessage {
         } else if (photosAsFiles != null) {
             sendPhotos(chatId, photosAsFiles, captions, onMessageFlag, notify);
         }
-        sendKeyboard(chatId, keyboard, onMessageFlag, notify);
+        if (keyboard != null) {
+            sendKeyboard(chatId, keyboard, onMessageFlag, notify);
+        }
     }
 }

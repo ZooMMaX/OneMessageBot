@@ -14,6 +14,8 @@ public class TextMessage implements ViewMessage{
     @Override
     public void run() {
         sendText(chatId, text, onMessageFlag, notify);
-        sendKeyboard(chatId, keyboard, onMessageFlag, notify);
+        if (keyboard != null) {
+            sendKeyboard(chatId, keyboard, onMessageFlag, notify);
+        }
     }
 }

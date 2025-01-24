@@ -34,6 +34,8 @@ public class DocumentMessage implements ViewMessage{
         } else if (filesAsFiles != null) {
             sendDocuments(chatId, filesAsFiles, captions, onMessageFlag, notify);
         }
-        sendKeyboard(chatId, keyboard, onMessageFlag, notify);
+        if (keyboard != null) {
+            sendKeyboard(chatId, keyboard, onMessageFlag, notify);
+        }
     }
 }
