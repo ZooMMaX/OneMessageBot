@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Notification - One Message Bot Docs</title>
+    <title>UpdateMessageWithTime - One Message Bot Docs</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Notification";
-        var mkdocs_page_input_path = "notifications/notification.md";
+        var mkdocs_page_name = "UpdateMessageWithTime";
+        var mkdocs_page_input_path = "viewmessage/updatemessage.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -71,22 +71,24 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">ViewMessage</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/listener/">Listener</a>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../listener/">Listener</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/textmessage/">TextMessage</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../textmessage/">TextMessage</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/inlinekeyboard/">InlineKeyboard</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../inlinekeyboard/">InlineKeyboard</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/audiomessage/">AudioMessage</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../audiomessage/">AudioMessage</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/documentmessage/">DocumentMessage</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../documentmessage/">DocumentMessage</a>
                   </li>
-                  <li class="toctree-l1"><a class="" href="../../viewmessage/picturemessage.md">PhotoMessage</a>
+                  <li class="toctree-l1"><a class="" href="../picturemessage.md">PhotoMessage</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/videomessage/">VideoMessage</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../videomessage/">VideoMessage</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../../viewmessage/updatemessage/">UpdateMessageWithTime</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">UpdateMessageWithTime</a>
+    <ul class="current">
+    </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Keyboards</span></p>
@@ -97,10 +99,8 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Notifications</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Notification</a>
-    <ul class="current">
-    </ul>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../notifications/notification/">Notification</a>
                   </li>
               </ul>
       </div>
@@ -117,8 +117,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Notifications</li>
-      <li class="breadcrumb-item active">Notification</li>
+          <li class="breadcrumb-item">ViewMessage</li>
+      <li class="breadcrumb-item active">UpdateMessageWithTime</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -127,42 +127,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="notifications">Notifications<a class="headerlink" href="#notifications" title="Permanent link">&para;</a></h1>
-<p>The library supports sending notifications to chats.</p>
-<p>To create a notification, use the <code>CreateNotification</code> class:</p>
-<pre><code class="language-java">public class example {
-
-    public static void main(String[] args) {
-        CreateNotification createNotification = new CreateNotification(
-                &quot;Hello notify&quot;, // message
-                String.valueOf(123456789), // tg_id
-                null, // image
-                NotificationType.FULL, // notificationType
-                null // fileType
-        );
-        createNotification.run();
-    }
-}
+                <h1 id="updating-a-message-by-time">Updating a Message by Time<a class="headerlink" href="#updating-a-message-by-time" title="Permanent link">&para;</a></h1>
+<p>Messages can be updated at a specified time.</p>
+<p>To do this, create a <code>ViewMessage</code> that represents the message to which the original message will be replaced.</p>
+<pre><code class="language-java">ViewMessage viewMessage = TextMessage.builder()
+    .text(&quot;Hello, world!&quot;)
+    .chatId(123456789)
+    .build();
 </code></pre>
-<p>As a result, a notification with the text <code>Hello notify</code> will be created and sent to the chat with ID <code>123456789</code>.</p>
-<p>Parameters:</p>
+<p>Then, create a message that will serve as the original for the update and either return it or call its <code>run()</code> method.</p>
+<pre><code class="language-java">import ru.zoommax.view.TextMessage; 
+class Example {
+    public static void main(String[] args) {
+        ViewMessage viewMessage = TextMessage.builder()
+            .text(&quot;Hello&quot;)
+            .chatId(123456789)
+            .viewMessageToUpdate(viewMessage.toString())
+            .needUpdate(true)
+            .updateTime(System.currentTimeMillis() + 10000)
+            .build();
+        viewMessage.run();
+    }
+} 
+</code></pre>
 <ul>
-<li><code>message</code> - the text of the notification</li>
-<li><code>tg_id</code> - the chat ID</li>
-<li><code>image</code> - a <code>String</code> path to the image or video</li>
-<li><code>notificationType</code> - the type of notification, either <code>FULL</code> or <code>ALERT</code></li>
-<li><code>fileType</code> - a <code>String</code> representing the file type, either <code>image</code> or <code>video</code></li>
+<li><code>viewMessageToUpdate</code> - the message that will replace the original one. Takes a <code>serialized String</code> from <code>ViewMessage</code> as input.</li>
+<li><code>needUpdate</code> - a flag indicating whether an update is needed.</li>
+<li><code>updateTime</code> - the update time in milliseconds.</li>
 </ul>
-<p><code>NotificationType</code> defines the type of notification:</p>
-<ul>
-<li><code>FULL</code> - full notification (appears immediately, with buttons for other unread notifications displayed under the message),</li>
-<li><code>ALERT</code> - a message appears in the chat indicating there are unread notifications, with buttons for other unread notifications displayed under it. Clicking on the notification button opens a pop-up ALERT according to the Telegram Bot API documentation.</li>
-</ul>
+<p>Note that if the original message has <code>notify = true</code>, the update will not occur. Also, the message will not be updated if the original message was modified before the update time.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../../keyboard/keyboard/" class="btn btn-neutral float-left" title="Keyboard"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../videomessage/" class="btn btn-neutral float-left" title="VideoMessage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../keyboard/button/" class="btn btn-neutral float-right" title="Button">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -185,8 +184,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../keyboard/keyboard/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../videomessage/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../../keyboard/button/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
