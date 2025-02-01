@@ -33,6 +33,8 @@ Features:
 
 <img src="assets/checkbox.png" alt="drawing" width="24"/> Sending documents with links, `java.io.File`, or `byte[]`
 
+<img src="assets/checkbox.png" alt="drawing" width="24"/> Updatable messages by time
+
 <img src="assets/round.png" alt="drawing" width="24"/> Sending `Reply Keyboard`
 
 ## Installation
@@ -43,14 +45,14 @@ Maven:
 <dependency>
     <groupId>ru.zoommax</groupId>
     <artifactId>OneMessageBot</artifactId>
-    <version>1.1.0.3</version>
+    <version>1.1.3.3</version>
 </dependency>
 ```
 
 Gradle:
 
 ```groovy
-implementation 'ru.zoommax:OneMessageBot:1.1.0.3'
+implementation 'ru.zoommax:OneMessageBot:1.1.3.3'
 ```
 
 ## Third-party Dependencies

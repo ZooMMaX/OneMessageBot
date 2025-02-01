@@ -28,6 +28,7 @@ nav:
       - DocumentMessage: viewmessage/documentmessage.md
       - PhotoMessage: viewmessage/picturemessage.md
       - VideoMessage: viewmessage/videomessage.md
+      - UpdateMessageWithTime: viewmessage/updatemessage.md
   - Keyboards:
       - Button: keyboard/button.md
       - Keyboard: keyboard/keyboard.md
