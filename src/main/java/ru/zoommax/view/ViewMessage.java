@@ -4,6 +4,7 @@ import com.pengrad.telegrambot.model.Message;
 import com.pengrad.telegrambot.model.request.*;
 import com.pengrad.telegrambot.request.*;
 import ru.zoommax.BotApp;
+import ru.zoommax.db.MessageTimeUpdatePojo;
 import ru.zoommax.utils.db.MessageType;
 import ru.zoommax.db.UserPojo;
 import ru.zoommax.utils.keyboard.Keyboard;
@@ -974,6 +975,72 @@ public interface ViewMessage extends Runnable {
 
     default void sendReplyKeyboard(long chatId, ReplyKeyboardMarkup replyKeyboardMarkup, String onMessageFlag){
 
+    }
+
+    default String objectToString() {
+        if (this instanceof TextMessage) {
+            return ((TextMessage) this).toString();
+        } else if (this instanceof VideoMessage) {
+            return ((VideoMessage) this).toString();
+        } else if (this instanceof PhotoMessage) {
+            return ((PhotoMessage) this).toString();
+        } else if (this instanceof AudioMessage) {
+            return ((AudioMessage) this).toString();
+        } else if (this instanceof DocumentMessage) {
+            return ((DocumentMessage) this).toString();
+        } else if (this instanceof Keyboard) {
+            return ((Keyboard) this).toString();
+        }
+        return null;
+    }
+
+    static ViewMessage fromString(String text) {
+        if (text == null) {
+            return null;
+        }
+        if (text.startsWith("TextMessage")) {
+            return TextMessage.builder().viewMessageTextEncoded(text).build().fstring();
+        } else if (text.startsWith("VideoMessage")) {
+            return VideoMessage.builder().viewMessageTextEncoded(text).build().fstring();
+        } else if (text.startsWith("PhotoMessage")) {
+            return PhotoMessage.builder().viewMessageTextEncoded(text).build().fstring();
+        } else if (text.startsWith("AudioMessage")) {
+            return AudioMessage.builder().viewMessageTextEncoded(text).build().fstring();
+        } else if (text.startsWith("DocumentMessage")) {
+            return DocumentMessage.builder().viewMessageTextEncoded(text).build().fstring();
+        } else if (text.startsWith("InlineKeyboard")) {
+            return InlineKeyboard.builder().viewMessageTextEncoded(text).build().fstring();
+        }
+        return null;
+    }
+
+    default void updateViewMessageTime(long chatId, boolean needUpdate, String viewMessageToUpdate, long updateTime) {
+        MessageTimeUpdatePojo messageTimeUpdatePojo = new MessageTimeUpdatePojo();
+        messageTimeUpdatePojo.setChatId(chatId);
+        messageTimeUpdatePojo = messageTimeUpdatePojo.find();
+        if (messageTimeUpdatePojo == null) {
+            messageTimeUpdatePojo = new MessageTimeUpdatePojo();
+            messageTimeUpdatePojo.setChatId(chatId);
+            messageTimeUpdatePojo.setUpdateTime(0);
+            messageTimeUpdatePojo.setLastViewMessageUpdateTime(System.currentTimeMillis());
+            messageTimeUpdatePojo.setViewMessageBeforeUpdateTime(System.currentTimeMillis());
+            messageTimeUpdatePojo.setNeedUpdate(needUpdate);
+            messageTimeUpdatePojo.setViewMessageToUpdate(viewMessageToUpdate);
+            messageTimeUpdatePojo.insert();
+        }
+        if (needUpdate){
+            messageTimeUpdatePojo.setNeedUpdate(true);
+            messageTimeUpdatePojo.setViewMessageToUpdate(viewMessageToUpdate);
+            messageTimeUpdatePojo.setUpdateTime(updateTime);
+            messageTimeUpdatePojo.setViewMessageBeforeUpdateTime(System.currentTimeMillis());
+            messageTimeUpdatePojo.setLastViewMessageUpdateTime(System.currentTimeMillis());
+            messageTimeUpdatePojo.update();
+        } else {
+            messageTimeUpdatePojo.setUpdateTime(0);
+            messageTimeUpdatePojo.setLastViewMessageUpdateTime(System.currentTimeMillis());
+            messageTimeUpdatePojo.setNeedUpdate(false);
+            messageTimeUpdatePojo.update();
+        }
     }
 
 }

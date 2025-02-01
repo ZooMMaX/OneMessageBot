@@ -20,8 +20,11 @@ public class Keyboard {
     private List<List<Button>> keyboardButtons;
     private InlineKeyboardMarkup keyboard;
     private long chatId;
+    @Builder.Default
     private int pageKb = 0;
+    @Builder.Default
     private boolean notify = false;
+    @Builder.Default
     private int rows = 0;
 
     private void check() {
@@ -111,8 +114,11 @@ public class Keyboard {
         return keyboardMarkups.get(pageKb);
     }
 
-    private String keyboardButtonsToString() {
+    public String keyboardButtonsToString() {
         StringBuilder sb = new StringBuilder();
+        if (code != null) {
+            return code;
+        }
         for (List<Button> row : keyboardButtons) {
             for (Button button : row) {
                 sb.append("{").append(button.getText().replace(";", "\\;").replace("{", "\\{").replace("}", "\\}")).append(";");

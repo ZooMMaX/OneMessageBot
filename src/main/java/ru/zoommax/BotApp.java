@@ -14,6 +14,7 @@ import org.reflections.Reflections;
 import org.reflections.scanners.Scanners;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
+import ru.zoommax.db.MessageTimeUpdatePojo;
 import ru.zoommax.db.NotificationPojo;
 import ru.zoommax.db.UserMarkupsPojo;
 import ru.zoommax.db.UserPojo;
@@ -119,6 +120,9 @@ public class BotApp implements Runnable {
 
                 NotificationPojo notificationPojo = new NotificationPojo();
                 notificationPojo.ensureTableExists(botSettings.getDbConnection());
+
+                MessageTimeUpdatePojo messageTimeUpdatePojo = new MessageTimeUpdatePojo();
+                messageTimeUpdatePojo.ensureTableExists(botSettings.getDbConnection());
             } else {
                 Connection connection = botSettings.getDbConnection();
                 UserPojo userPojo = new UserPojo();
@@ -129,10 +133,36 @@ public class BotApp implements Runnable {
 
                 NotificationPojo notificationPojo = new NotificationPojo();
                 notificationPojo.ensureTableExists(connection);
+
+                MessageTimeUpdatePojo messageTimeUpdatePojo = new MessageTimeUpdatePojo();
+                messageTimeUpdatePojo.ensureTableExists(connection);
             }
         }
 
+        messageTimeUpdate();
         notificationSchedule();
+    }
+
+    private void messageTimeUpdate() {
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+
+            @Override
+            public void run() {
+                List<MessageTimeUpdatePojo> messageTimeUpdatePojo = new MessageTimeUpdatePojo().findAll();
+                for (MessageTimeUpdatePojo messageTimeUpdatePojo1 : messageTimeUpdatePojo) {
+                    if (messageTimeUpdatePojo1.isNeedUpdate() && messageTimeUpdatePojo1.getLastViewMessageUpdateTime() == messageTimeUpdatePojo1.getViewMessageBeforeUpdateTime()) {
+                        if (messageTimeUpdatePojo1.getUpdateTime() <= System.currentTimeMillis()) {
+                            ViewMessage viewMessage = ViewMessage.fromString(messageTimeUpdatePojo1.getViewMessageToUpdate());
+                            executor.submit(viewMessage);
+                            messageTimeUpdatePojo1.setUpdateTime(0);
+                            messageTimeUpdatePojo1.setNeedUpdate(false);
+                            messageTimeUpdatePojo1.setLastViewMessageUpdateTime(System.currentTimeMillis());
+                            messageTimeUpdatePojo1.update();
+                        }
+                    }
+                }
+            }
+        }, 0, 1000);
     }
 
     private void notificationSchedule() {
