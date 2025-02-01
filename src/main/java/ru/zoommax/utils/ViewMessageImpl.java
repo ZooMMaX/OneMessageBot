@@ -11,4 +11,5 @@ public interface ViewMessageImpl {
     ViewMessage onCallbackQuery(String data, int messageId, long chatId, Update update);
     ViewMessage onInlineQuery(String query, String queryId, long chatId, Update update);
     ViewMessage onChosenInlineResult(String resultId, long queryId, String chatId, Update update);
+    ViewMessage onPayment(PaymentType paymentType, String payload, int messageId, long chatId, Update update);
 }

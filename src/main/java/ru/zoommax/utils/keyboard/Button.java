@@ -25,13 +25,15 @@ public class Button {
             this.type = ButtonType.MINI_APP;
         }else if (action.startsWith("http") || action.startsWith("tg")){
             this.type = ButtonType.LINK;
+        } else if (action.startsWith("pay")) {
+            this.type = ButtonType.PAY;
         } else {
             this.type = ButtonType.CALLBACK;
         }
     }
 
     public Button(String code) {
-        code = code.replaceFirst("\\{", "").replaceFirst("\\}", "");
+        code = code.replaceFirst("\\{", "").replaceFirst("\\}", "").replaceAll(";}", ";null}");
         String[] btn = code.split("(?<!\\\\);");
         this.text = btn[0].replace("\\{", "{").replace("\\}", "}").replace("\\;", ";");
         this.action = btn[1].replace("\\{", "{").replace("\\}", "}").replace("\\;", ";");
@@ -40,6 +42,8 @@ public class Button {
             this.type = ButtonType.MINI_APP;
         }else if (action.startsWith("http") || action.startsWith("tg")){
             this.type = ButtonType.LINK;
+        }else if (action.startsWith("pay")) {
+            this.type = ButtonType.PAY;
         } else {
             this.type = ButtonType.CALLBACK;
         }

@@ -90,6 +90,8 @@ public class Keyboard {
                         btns.add(new InlineKeyboardButton(page.get(j).get(k).getText()).url(page.get(j).get(k).getAction()));
                     } else if (page.get(j).get(k).getType() == ButtonType.MINI_APP) {
                         btns.add(new InlineKeyboardButton(page.get(j).get(k).getText()).webApp(new WebAppInfo(page.get(j).get(k).getAction())));
+                    } else if (page.get(j).get(k).getType() == ButtonType.PAY) {
+                        btns.add(new InlineKeyboardButton(page.get(j).get(k).getText()).pay());
                     }
                 }
                 keyboardMarkup.addRow(Arrays.copyOf(btns.toArray(), btns.size(), InlineKeyboardButton[].class));

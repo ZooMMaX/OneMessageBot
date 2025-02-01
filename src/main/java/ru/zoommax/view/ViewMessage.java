@@ -973,6 +973,33 @@ public interface ViewMessage extends Runnable {
         }
     }
 
+    default void sendInvoice(SendInvoice sendInvoice, String onMessageFlag, boolean notify, long chatId, Keyboard keyboard) {
+        UserPojo userPojo = new UserPojo();
+        userPojo.setChatId(chatId);
+        userPojo = userPojo.find();
+        if (userPojo != null) {
+            if (!notify) {
+                userPojo.setOnMessageFlag(onMessageFlag);
+                userPojo.update();
+                long lastMessageId = userPojo.getLastMessageId();
+                long viewMessageId = userPojo.getViewMessageId();
+                DeleteMessage viewMessageDelete = new DeleteMessage(chatId, Math.toIntExact(viewMessageId));
+                BotApp.bot.execute(
+                        new DeleteMessage(chatId, Math.toIntExact(lastMessageId))
+                );
+
+                sendInvoice.replyMarkup(keyboard.getKeyboard());
+
+                viewMessageId = BotApp.bot.execute(sendInvoice).message().messageId();
+                BotApp.bot.execute(viewMessageDelete);
+                userPojo.setViewMessageId(viewMessageId);
+                userPojo.setMessageType(MessageType.INVOICE);
+                userPojo.update();
+
+            }
+        }
+    }
+
     default void sendReplyKeyboard(long chatId, ReplyKeyboardMarkup replyKeyboardMarkup, String onMessageFlag){
 
     }

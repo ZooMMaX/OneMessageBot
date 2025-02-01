@@ -3,6 +3,7 @@ package ru.zoommax;
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
 import com.pengrad.telegrambot.model.PhotoSize;
+import com.pengrad.telegrambot.model.PreCheckoutQuery;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.model.User;
 import com.pengrad.telegrambot.model.request.InlineKeyboardButton;
@@ -18,6 +19,7 @@ import ru.zoommax.db.MessageTimeUpdatePojo;
 import ru.zoommax.db.NotificationPojo;
 import ru.zoommax.db.UserMarkupsPojo;
 import ru.zoommax.db.UserPojo;
+import ru.zoommax.utils.PaymentType;
 import ru.zoommax.utils.ViewMessageListener;
 import ru.zoommax.utils.db.DbType;
 import ru.zoommax.utils.db.NotificationType;
@@ -282,6 +284,13 @@ public class BotApp implements Runnable {
         bot = new TelegramBot(botToken);
         bot.setUpdatesListener(updates -> {
             for (Update update : updates){
+
+                if (update.preCheckoutQuery() != null) {
+                    AnswerPreCheckoutQuery answerPreCheckoutQuery = new AnswerPreCheckoutQuery(update.preCheckoutQuery().id());
+                    bot.execute(answerPreCheckoutQuery);
+                    continue;
+                }
+
                 UserPojo userPojo = new UserPojo();
                 long chatId = 0;
                 if (update.message() != null) {
@@ -326,6 +335,31 @@ public class BotApp implements Runnable {
 
                 ViewMessage viewMessage = null;
                 if (update.message() != null) {
+                    //payment
+                    if (update.message().successfulPayment() != null || update.message().refundedPayment() != null) {
+                        if (annotated != null) {
+                            for (Class<?> listener : annotated) {
+                                try {
+                                    Method method = listener.getMethod("onPayment", PaymentType.class, String.class, int.class, long.class, Update.class);
+                                    if (update.message().successfulPayment().invoicePayload() != null) {
+                                        viewMessage = (ViewMessage) method.invoke(listener.getDeclaredConstructor().newInstance(), PaymentType.PAYMENT, update.message().successfulPayment().invoicePayload(),
+                                                update.message().messageId(), update.message().chat().id(), update);
+                                    } else if (update.message().refundedPayment().invoicePayload() != null) {
+                                        viewMessage = (ViewMessage) method.invoke(listener.getDeclaredConstructor().newInstance(), PaymentType.REFUND, update.message().refundedPayment().invoicePayload(),
+                                                update.message().messageId(), update.message().chat().id(), update);
+                                    }
+                                    if (viewMessage != null) {
+                                        break;
+                                    }
+                                } catch (InstantiationException | IllegalAccessException |
+                                         InvocationTargetException |
+                                         NoSuchMethodException e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+                        }
+                    }
+
                     //text message
                     if (update.message().text() != null) {
                         //command
