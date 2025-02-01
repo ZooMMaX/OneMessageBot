@@ -74,6 +74,8 @@ Features:
 
 - [X] Sending documents with links, `java.io.File`, or `byte[]`
 
+- [X] Updatable messages by time
+
 - [ ] Sending `Reply Keyboard`
 
 ## Installation
@@ -84,14 +86,14 @@ Maven:
 <dependency>
     <groupId>ru.zoommax</groupId>
     <artifactId>OneMessageBot</artifactId>
-    <version>1.1.0.3</version>
+    <version>1.1.3.3</version>
 </dependency>
 ```
 
 Gradle:
 
 ```groovy
-implementation 'ru.zoommax:OneMessageBot:1.1.0.3'
+implementation 'ru.zoommax:OneMessageBot:1.1.3.3'
 ```
 
 ## Third-party Dependencies
