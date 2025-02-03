@@ -183,6 +183,9 @@ public class BotApp implements Runnable {
                     UserPojo userPojo = new UserPojo();
                     userPojo.setChatId(Long.parseLong(notificationPojo.getTg_id()));
                     userPojo = userPojo.find();
+                    if (userPojo == null) {
+                        continue;
+                    }
                     if (userPojo.isShowNotif()) {
                         List<Button> buttonsList = new ArrayList<>();
                         if (buttons.containsKey(notificationPojo.getTg_id())) {
