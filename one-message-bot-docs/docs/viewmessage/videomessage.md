@@ -5,8 +5,7 @@ Represents the builder class `VideoMessage`, which is intended for sending video
 **Examples:**
 
 ```java
-import ru.zoommax.view.VideoMessage;
-import ru.zoommax.view.ViewMessage;
+import space.zoommax.view.VideoMessage;
 
 public class example {
 
@@ -27,7 +26,7 @@ public class example {
                 .onMessageFlag("start")
                 .notify(false)
                 .build();
-                
+
         videoMessage.run();
     }
 }

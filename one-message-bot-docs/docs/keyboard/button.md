@@ -34,7 +34,7 @@ If `button_action` starts with:
 **Examples:**
 
 ```java
-import ru.zoommax.utils.keyboard.Button;
+import space.zoommax.utils.keyboard.Button;
 
 Button button1 = new Button("{I will open a Telegram Mini App;mapphttp://example.com}");
 Button button2 = new Button("{I will open a link;http://example.com}");

@@ -5,8 +5,7 @@ The `DocumentMessage` class builder is designed for sending documents.
 **Examples:**
 
 ```java
-import ru.zoommax.view.DocumentMessage;
-import ru.zoommax.view.ViewMessage;
+import space.zoommax.view.DocumentMessage;
 
 public class example {
 
@@ -27,7 +26,7 @@ public class example {
                 .onMessageFlag("start")
                 .notify(false)
                 .build();
-                
+
         documentMessage.run();
     }
 }

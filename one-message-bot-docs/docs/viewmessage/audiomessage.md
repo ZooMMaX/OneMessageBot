@@ -5,8 +5,7 @@ The `AudioMessage` class builder is designed for sending audio files.
 **Examples:**
 
 ```java
-import ru.zoommax.view.AudioMessage;
-import ru.zoommax.view.ViewMessage;
+import space.zoommax.view.AudioMessage;
 
 public class example {
 
@@ -27,7 +26,7 @@ public class example {
                 .onMessageFlag("start")
                 .notify(false)
                 .build();
-                
+
         audioMessage.run();
     }
 }

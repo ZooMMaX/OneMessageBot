@@ -3,8 +3,7 @@
 Represents the builder class `PhotoMessage`, which is intended for sending images.
 
 ```java
-import ru.zoommax.view.PhotoMessage;
-import ru.zoommax.view.ViewMessage;
+import space.zoommax.view.PhotoMessage;
 
 public class example {
 
@@ -26,7 +25,7 @@ public class example {
                 .notify(false)
                 .build();
 
-        photoMessage.run();        
+        photoMessage.run();
     }
 }
 ```

@@ -3,7 +3,7 @@
 Represents the builder class `TextMessage`, which is intended for sending text messages.
 
 ```java
-import ru.zoommax.view.TextMessage;
+import space.zoommax.view.TextMessage;
 
 public class example {
 

@@ -5,8 +5,8 @@ To create an event handler, you need to create a class that implements the `View
 For example:
 
 ```java
-import ru.zoommax.utils.ViewMessageListener;
-import ru.zoommax.view.TextMessage;
+import space.zoommax.utils.ViewMessageListener;
+import space.zoommax.view.TextMessage;
 
 @ViewMessageListener
 public class Start implements ViewMessageImpl {

@@ -84,16 +84,16 @@ Maven:
 
 ```xml
 <dependency>
-    <groupId>ru.zoommax</groupId>
+    <groupId>space.zoommax</groupId>
     <artifactId>OneMessageBot</artifactId>
-    <version>1.1.3.3</version>
+    <version>2.1.4.7</version>
 </dependency>
 ```
 
 Gradle:
 
 ```groovy
-implementation 'ru.zoommax:OneMessageBot:1.1.3.3'
+implementation 'space.zoommax:OneMessageBot:2.1.4.7'
 ```
 
 ## Third-party Dependencies

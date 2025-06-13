@@ -5,15 +5,15 @@
 Maven:
 ```xml
 <dependency>
-    <groupId>ru.zoommax</groupId>
+    <groupId>space.zoommax</groupId>
     <artifactId>OneMessageBot</artifactId>
-    <version>1.0</version>
+    <version>2.1.4.7</version>
 </dependency>
 ```
 
 Gradle:
 ```groovy
-implementation 'ru.zoommax:OneMessageBot:1.0'
+implementation 'space.zoommax:OneMessageBot:2.1.4.7'
 ```
 
 ## Create a bot
@@ -23,9 +23,8 @@ implementation 'ru.zoommax:OneMessageBot:1.0'
 ```java
 package test.cl;
 
-import ru.zoommax.BotApp;
-import ru.zoommax.BotSettings;
-import ru.zoommax.utils.db.DbType;
+import space.zoommax.BotSettings;
+import space.zoommax.utils.db.DbType;
 
 import java.io.IOException;
 
@@ -64,7 +63,7 @@ public class Main {
 ```java
 package test.cl;
 
-import ru.zoommax.BotApp;
+import space.zoommax.BotApp;
 
 public class Main {
     public static void main(String[] args) {
@@ -84,14 +83,14 @@ package test.cl;
 
 import com.pengrad.telegrambot.model.PhotoSize;
 import com.pengrad.telegrambot.model.Update;
-import ru.zoommax.BotApp;
-import ru.zoommax.utils.CreateNotification;
-import ru.zoommax.utils.ViewMessageImpl;
-import ru.zoommax.utils.ViewMessageListener;
-import ru.zoommax.utils.db.NotificationType;
-import ru.zoommax.utils.keyboard.Keyboard;
-import ru.zoommax.view.TextMessage;
-import ru.zoommax.view.ViewMessage;
+import space.zoommax.BotApp;
+import space.zoommax.utils.CreateNotification;
+import space.zoommax.utils.ViewMessageImpl;
+import space.zoommax.utils.ViewMessageListener;
+import space.zoommax.utils.db.NotificationType;
+import space.zoommax.utils.keyboard.Keyboard;
+import space.zoommax.view.TextMessage;
+import space.zoommax.view.ViewMessage;
 
 @ViewMessageListener
 public class Start implements ViewMessageImpl {
@@ -121,7 +120,7 @@ public class Start implements ViewMessageImpl {
     @Override
     public ViewMessage onCommand(String command, int messageId, long chatId, Update update) {
         if (command.equals("/start")) {
-            if (chatId == 000000){
+            if (chatId == 000000) {
                 BotApp.setUserLanguage(String.valueOf(chatId), "default_en_US");
             }
             return TextMessage.builder()

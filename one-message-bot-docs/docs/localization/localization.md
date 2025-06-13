@@ -39,8 +39,8 @@ Set the `defaultLanguage` and `languageDirPath` parameters in `BotSettings`.
 Start the bot. The language name will be the same as the name of the translation file.
 
 ```java
-import ru.zoommax.BotApp;
-import ru.zoommax.utils.lang.LocalizationManager;
+import space.zoommax.BotApp;
+import space.zoommax.utils.lang.LocalizationManager;
 
 LocalizationManager localizationManager = BotApp.localizationManager;
 String botStart = localizationManager.getTranslationForLanguage(UserLanguage.getUserLanguage(chatId), "main.bot_starting");

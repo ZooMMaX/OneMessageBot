@@ -28,35 +28,35 @@ In a formatted string, the `\n` separator is used to create a new row of buttons
 Buttons will be arranged vertically.
 
 ```java
-import ru.zoommax.utils.keyboard.Keyboard;
+import space.zoommax.utils.keyboard.Keyboard;
 
 Keyboard keyboard = Keyboard.builder()
-    .chatId(123456789)
-    .code("{I will open a link;http://example.com}\n{I will perform a callback action;any_data}")
-    .build();
+        .chatId(123456789)
+        .code("{I will open a link;http://example.com}\n{I will perform a callback action;any_data}")
+        .build();
 ```
 
 Two buttons in one row and a third button below them.
 
 ```java
-import ru.zoommax.utils.keyboard.Keyboard;
+import space.zoommax.utils.keyboard.Keyboard;
 
 Keyboard keyboard = Keyboard.builder()
-    .chatId(123456789)
-    .code("{I will open a link;http://example.com}{I will perform a callback action;any_data}\n{I will also open a link;tg://username}")
-    .build();
+        .chatId(123456789)
+        .code("{I will open a link;http://example.com}{I will perform a callback action;any_data}\n{I will also open a link;tg://username}")
+        .build();
 ```
 
 You can also add any characters outside of `{` and `}` to visually separate buttons in the code. All characters outside of `{` and `}` (except `\n`) will be ignored.
 
 ```java
-import ru.zoommax.utils.keyboard.Keyboard;
+import space.zoommax.utils.keyboard.Keyboard;
 
 Keyboard keyboard = Keyboard.builder()
-    .chatId(123456789)
-    .code("{I will open a link;http://example.com}{I will perform a callback action;any_data}\n" +
-          "_____>!@_________{I will also open a link;tg://username}______acfd_______")
-    .build();
+        .chatId(123456789)
+        .code("{I will open a link;http://example.com}{I will perform a callback action;any_data}\n" +
+                "_____>!@_________{I will also open a link;tg://username}______acfd_______")
+        .build();
 ```
 
 ---
@@ -66,27 +66,37 @@ Keyboard keyboard = Keyboard.builder()
 Buttons will be arranged vertically.
 
 ```java
-import ru.zoommax.utils.keyboard.Button;
-import ru.zoommax.utils.keyboard.Keyboard;
+import space.zoommax.utils.keyboard.Button;
+import space.zoommax.utils.keyboard.Keyboard;
 
 import java.util.List;
 import java.util.ArrayList;
 
 List<Button> buttons = new ArrayList<>();
-buttons.add(new Button("I will open a link", "http://example.com"));
-buttons.add(new Button("I will perform a callback action", "any_data"));
+buttons.
+
+add(new Button("I will open a link", "http://example.com"));
+        buttons.
+
+add(new Button("I will perform a callback action", "any_data"));
 
 List<Button> buttons2 = new ArrayList<>();
-buttons2.add(new Button("I will also open a link", "tg://username"));
+buttons2.
+
+add(new Button("I will also open a link", "tg://username"));
 
 List<List<Button>> keyboardButtons = new ArrayList<>();
-keyboardButtons.add(buttons);
-keyboardButtons.add(buttons2);
+keyboardButtons.
+
+add(buttons);
+keyboardButtons.
+
+add(buttons2);
 
 Keyboard keyboard = Keyboard.builder()
-    .chatId(123456789)
-    .keyboardButtons(keyboardButtons)
-    .build();
+        .chatId(123456789)
+        .keyboardButtons(keyboardButtons)
+        .build();
 ```
 
 ---

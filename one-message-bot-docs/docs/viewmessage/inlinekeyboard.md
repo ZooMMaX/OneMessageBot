@@ -5,8 +5,7 @@ The `InlineKeyboard` class builder is designed for sending buttons in the form o
 **Examples:**
 
 ```java
-import ru.zoommax.view.InlineKeyboard;
-import ru.zoommax.view.ViewMessage;
+import space.zoommax.view.InlineKeyboard;
 
 public class example {
 
@@ -16,7 +15,7 @@ public class example {
                 .code("{Google;https://google.ru}{Yandex;https://ya.ru}\n" +
                         "{Start;strt}")
                 .build();
-        
+
         inlineKeyboard.run();
     }
 }
