@@ -165,8 +165,8 @@ By default, English is used as the language. The library supports two localizati
 <h3 id="using-localization-in-your-code">Using Localization in Your Code<a class="headerlink" href="#using-localization-in-your-code" title="Permanent link">&para;</a></h3>
 <p>Set the <code>defaultLanguage</code> and <code>languageDirPath</code> parameters in <code>BotSettings</code>.<br />
 Start the bot. The language name will be the same as the name of the translation file.</p>
-<pre><code class="language-java">import ru.zoommax.BotApp;
-import ru.zoommax.utils.lang.LocalizationManager;
+<pre><code class="language-java">import space.zoommax.BotApp;
+import space.zoommax.utils.lang.LocalizationManager;
 
 LocalizationManager localizationManager = BotApp.localizationManager;
 String botStart = localizationManager.getTranslationForLanguage(UserLanguage.getUserLanguage(chatId), &quot;main.bot_starting&quot;);

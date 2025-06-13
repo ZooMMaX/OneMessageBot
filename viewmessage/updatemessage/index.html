@@ -136,16 +136,17 @@
     .build();
 </code></pre>
 <p>Then, create a message that will serve as the original for the update and either return it or call its <code>run()</code> method.</p>
-<pre><code class="language-java">import ru.zoommax.view.TextMessage; 
+<pre><code class="language-java">import space.zoommax.view.TextMessage;
+
 class Example {
     public static void main(String[] args) {
         ViewMessage viewMessage = TextMessage.builder()
-            .text(&quot;Hello&quot;)
-            .chatId(123456789)
-            .viewMessageToUpdate(viewMessage.toString())
-            .needUpdate(true)
-            .updateTime(System.currentTimeMillis() + 10000)
-            .build();
+                .text(&quot;Hello&quot;)
+                .chatId(123456789)
+                .viewMessageToUpdate(viewMessage.toString())
+                .needUpdate(true)
+                .updateTime(System.currentTimeMillis() + 10000)
+                .build();
         viewMessage.run();
     }
 } 

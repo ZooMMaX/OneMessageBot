@@ -142,21 +142,20 @@
 <h2 id="add-a-dependency-to-your-project">Add a dependency to your project<a class="headerlink" href="#add-a-dependency-to-your-project" title="Permanent link">&para;</a></h2>
 <p>Maven:</p>
 <pre><code class="language-xml">&lt;dependency&gt;
-    &lt;groupId&gt;ru.zoommax&lt;/groupId&gt;
+    &lt;groupId&gt;space.zoommax&lt;/groupId&gt;
     &lt;artifactId&gt;OneMessageBot&lt;/artifactId&gt;
-    &lt;version&gt;1.0&lt;/version&gt;
+    &lt;version&gt;2.1.4.8&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre>
 <p>Gradle:</p>
-<pre><code class="language-groovy">implementation 'ru.zoommax:OneMessageBot:1.0'
+<pre><code class="language-groovy">implementation 'space.zoommax:OneMessageBot:2.1.4.8'
 </code></pre>
 <h2 id="create-a-bot">Create a bot<a class="headerlink" href="#create-a-bot" title="Permanent link">&para;</a></h2>
 <h3 id="configure-bot-settings">Configure bot settings<a class="headerlink" href="#configure-bot-settings" title="Permanent link">&para;</a></h3>
 <pre><code class="language-java">package test.cl;
 
-import ru.zoommax.BotApp;
-import ru.zoommax.BotSettings;
-import ru.zoommax.utils.db.DbType;
+import space.zoommax.BotSettings;
+import space.zoommax.utils.db.DbType;
 
 import java.io.IOException;
 
@@ -193,7 +192,7 @@ public class Main {
 <h3 id="run-the-bot">Run the bot<a class="headerlink" href="#run-the-bot" title="Permanent link">&para;</a></h3>
 <pre><code class="language-java">package test.cl;
 
-import ru.zoommax.BotApp;
+import space.zoommax.BotApp;
 
 public class Main {
     public static void main(String[] args) {
@@ -210,14 +209,14 @@ public class Main {
 
 import com.pengrad.telegrambot.model.PhotoSize;
 import com.pengrad.telegrambot.model.Update;
-import ru.zoommax.BotApp;
-import ru.zoommax.utils.CreateNotification;
-import ru.zoommax.utils.ViewMessageImpl;
-import ru.zoommax.utils.ViewMessageListener;
-import ru.zoommax.utils.db.NotificationType;
-import ru.zoommax.utils.keyboard.Keyboard;
-import ru.zoommax.view.TextMessage;
-import ru.zoommax.view.ViewMessage;
+import space.zoommax.BotApp;
+import space.zoommax.utils.CreateNotification;
+import space.zoommax.utils.ViewMessageImpl;
+import space.zoommax.utils.ViewMessageListener;
+import space.zoommax.utils.db.NotificationType;
+import space.zoommax.utils.keyboard.Keyboard;
+import space.zoommax.view.TextMessage;
+import space.zoommax.view.ViewMessage;
 
 @ViewMessageListener
 public class Start implements ViewMessageImpl {
@@ -247,7 +246,7 @@ public class Start implements ViewMessageImpl {
     @Override
     public ViewMessage onCommand(String command, int messageId, long chatId, Update update) {
         if (command.equals(&quot;/start&quot;)) {
-            if (chatId == 000000){
+            if (chatId == 000000) {
                 BotApp.setUserLanguage(String.valueOf(chatId), &quot;default_en_US&quot;);
             }
             return TextMessage.builder()

@@ -130,8 +130,8 @@
                 <h1 id="listener">Listener<a class="headerlink" href="#listener" title="Permanent link">&para;</a></h1>
 <p>To create an event handler, you need to create a class that implements the <code>ViewMessageImpl</code> interface, implement its methods, and add the <code>@ViewMessageListener</code> annotation to the class. The library performs a broadcast of events to the classes marked with the <code>@ViewMessageListener</code> annotation.</p>
 <p>For example:</p>
-<pre><code class="language-java">import ru.zoommax.utils.ViewMessageListener;
-import ru.zoommax.view.TextMessage;
+<pre><code class="language-java">import space.zoommax.utils.ViewMessageListener;
+import space.zoommax.view.TextMessage;
 
 @ViewMessageListener
 public class Start implements ViewMessageImpl {

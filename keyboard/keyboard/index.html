@@ -158,54 +158,64 @@
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="setting-the-keyboard-via-code">Setting the Keyboard via <code>code</code><a class="headerlink" href="#setting-the-keyboard-via-code" title="Permanent link">&para;</a></h3>
 <p>Buttons will be arranged vertically.</p>
-<pre><code class="language-java">import ru.zoommax.utils.keyboard.Keyboard;
+<pre><code class="language-java">import space.zoommax.utils.keyboard.Keyboard;
 
 Keyboard keyboard = Keyboard.builder()
-    .chatId(123456789)
-    .code(&quot;{I will open a link;http://example.com}\n{I will perform a callback action;any_data}&quot;)
-    .build();
+        .chatId(123456789)
+        .code(&quot;{I will open a link;http://example.com}\n{I will perform a callback action;any_data}&quot;)
+        .build();
 </code></pre>
 <p>Two buttons in one row and a third button below them.</p>
-<pre><code class="language-java">import ru.zoommax.utils.keyboard.Keyboard;
+<pre><code class="language-java">import space.zoommax.utils.keyboard.Keyboard;
 
 Keyboard keyboard = Keyboard.builder()
-    .chatId(123456789)
-    .code(&quot;{I will open a link;http://example.com}{I will perform a callback action;any_data}\n{I will also open a link;tg://username}&quot;)
-    .build();
+        .chatId(123456789)
+        .code(&quot;{I will open a link;http://example.com}{I will perform a callback action;any_data}\n{I will also open a link;tg://username}&quot;)
+        .build();
 </code></pre>
 <p>You can also add any characters outside of <code>{</code> and <code>}</code> to visually separate buttons in the code. All characters outside of <code>{</code> and <code>}</code> (except <code>\n</code>) will be ignored.</p>
-<pre><code class="language-java">import ru.zoommax.utils.keyboard.Keyboard;
+<pre><code class="language-java">import space.zoommax.utils.keyboard.Keyboard;
 
 Keyboard keyboard = Keyboard.builder()
-    .chatId(123456789)
-    .code(&quot;{I will open a link;http://example.com}{I will perform a callback action;any_data}\n&quot; +
-          &quot;_____&gt;!@_________{I will also open a link;tg://username}______acfd_______&quot;)
-    .build();
+        .chatId(123456789)
+        .code(&quot;{I will open a link;http://example.com}{I will perform a callback action;any_data}\n&quot; +
+                &quot;_____&gt;!@_________{I will also open a link;tg://username}______acfd_______&quot;)
+        .build();
 </code></pre>
 <hr />
 <h3 id="setting-the-keyboard-via-keyboardbuttons">Setting the Keyboard via <code>keyboardButtons</code><a class="headerlink" href="#setting-the-keyboard-via-keyboardbuttons" title="Permanent link">&para;</a></h3>
 <p>Buttons will be arranged vertically.</p>
-<pre><code class="language-java">import ru.zoommax.utils.keyboard.Button;
-import ru.zoommax.utils.keyboard.Keyboard;
+<pre><code class="language-java">import space.zoommax.utils.keyboard.Button;
+import space.zoommax.utils.keyboard.Keyboard;
 
 import java.util.List;
 import java.util.ArrayList;
 
 List&lt;Button&gt; buttons = new ArrayList&lt;&gt;();
-buttons.add(new Button(&quot;I will open a link&quot;, &quot;http://example.com&quot;));
-buttons.add(new Button(&quot;I will perform a callback action&quot;, &quot;any_data&quot;));
+buttons.
+
+add(new Button(&quot;I will open a link&quot;, &quot;http://example.com&quot;));
+        buttons.
+
+add(new Button(&quot;I will perform a callback action&quot;, &quot;any_data&quot;));
 
 List&lt;Button&gt; buttons2 = new ArrayList&lt;&gt;();
-buttons2.add(new Button(&quot;I will also open a link&quot;, &quot;tg://username&quot;));
+buttons2.
+
+add(new Button(&quot;I will also open a link&quot;, &quot;tg://username&quot;));
 
 List&lt;List&lt;Button&gt;&gt; keyboardButtons = new ArrayList&lt;&gt;();
-keyboardButtons.add(buttons);
-keyboardButtons.add(buttons2);
+keyboardButtons.
+
+add(buttons);
+keyboardButtons.
+
+add(buttons2);
 
 Keyboard keyboard = Keyboard.builder()
-    .chatId(123456789)
-    .keyboardButtons(keyboardButtons)
-    .build();
+        .chatId(123456789)
+        .keyboardButtons(keyboardButtons)
+        .build();
 </code></pre>
 <hr />
 <h3 id="note">Note<a class="headerlink" href="#note" title="Permanent link">&para;</a></h3>
