@@ -9,6 +9,8 @@ import ru.zoommax.utils.db.DbType;
 import ru.zoommax.utils.db.MessageType;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -74,6 +76,14 @@ public class UserPojo extends MongoDBConnector {
             return collection().find(eq("chatId", this.chatId)).first();
         } else {
             return sqlFind(BotApp.botSettings.getDbConnection());
+        }
+    }
+
+    public List<UserPojo> findAll() {
+        if (BotApp.botSettings.getDbType() == DbType.MONGODB) {
+            return collection().find().into(new ArrayList<>());
+        } else {
+            return sqlFindAll(BotApp.botSettings.getDbConnection());
         }
     }
 
@@ -181,6 +191,30 @@ public class UserPojo extends MongoDBConnector {
                 user.setShowNotif(rs.getBoolean("showNotif"));
                 return user;
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<UserPojo> sqlFindAll(Connection connection) {
+        final String query = "SELECT * FROM users";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            ResultSet rs = statement.executeQuery();
+            List<UserPojo> users = new ArrayList<>();
+            while (rs.next()) {
+                UserPojo user = new UserPojo();
+                user.setChatId(rs.getLong("chatId"));
+                user.setViewMessageId(rs.getLong("ViewMessageId"));
+                user.setLastMessageId(rs.getLong("lastMessageId"));
+                user.setMessageType(rs.getString("messageType") != null ? MessageType.valueOf(rs.getString("messageType")) : null);
+                user.setLanguage(rs.getString("language"));
+                user.setOnMessageFlag(rs.getString("onMessageFlag"));
+                user.setNotificationMessageId(rs.getLong("notificationMessageId"));
+                user.setShowNotif(rs.getBoolean("showNotif"));
+                users.add(user);
+            }
+            return users;
         } catch (SQLException e) {
             e.printStackTrace();
         }

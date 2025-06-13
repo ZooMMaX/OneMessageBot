@@ -235,9 +235,7 @@ public class BotApp implements Runnable {
                                         .keyboard(keyboard)
                                         .notify(true)
                                         .build());
-                            }
-
-                            if (fileType.equalsIgnoreCase("video")) {
+                            }else if (fileType.equalsIgnoreCase("video")) {
                                 File file = new File(image);
                                 forSend.put(notificationPojo.getTg_id(), VideoMessage.builder()
                                         .videoAsFile(file)
@@ -246,9 +244,7 @@ public class BotApp implements Runnable {
                                         .keyboard(keyboard)
                                         .notify(true)
                                         .build());
-                            }
-
-                            if (image.isEmpty()) {
+                            } else {
                                 forSend.put(notificationPojo.getTg_id(), TextMessage.builder()
                                         .text(msgText)
                                         .chatId(Long.parseLong(notificationPojo.getTg_id()))
