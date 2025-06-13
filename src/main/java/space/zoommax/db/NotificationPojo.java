@@ -120,18 +120,7 @@ public class NotificationPojo extends MongoDBConnector {
     }
 
     public void ensureTableExists(Connection connection) {
-        String createTableQuery = """
-    CREATE TABLE IF NOT EXISTS notifications (
-        uid TEXT PRIMARY KEY,
-        tg_id TEXT,
-        message TEXT,
-        date BIGINT,
-        is_read BOOLEAN,
-        notificationType TEXT,
-        file TEXT,
-        fileType TEXT
-    )
-    """;
+        String createTableQuery = "CREATE TABLE IF NOT EXISTS notifications (uid TEXT PRIMARY KEY, tg_id TEXT, message TEXT, date BIGINT, is_read BOOLEAN, notificationType TEXT, file TEXT, fileType TEXT)";
         try (PreparedStatement statement = connection.prepareStatement(createTableQuery)) {
             statement.executeUpdate();
             System.out.println("Table checked or created: notifications");

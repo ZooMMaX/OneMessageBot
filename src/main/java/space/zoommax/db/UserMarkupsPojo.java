@@ -78,13 +78,7 @@ public class UserMarkupsPojo extends MongoDBConnector {
 
 
     public void ensureTableExists(Connection connection) {
-        String createTableQuery = """
-    CREATE TABLE IF NOT EXISTS userMarkups (
-        tg_id TEXT PRIMARY KEY,
-        code TEXT,
-        codeNotify TEXT
-    )
-    """;
+        String createTableQuery = "CREATE TABLE IF NOT EXISTS userMarkups ( tg_id TEXT PRIMARY KEY, code TEXT, codeNotify TEXT) ";
         try (PreparedStatement statement = connection.prepareStatement(createTableQuery)) {
             statement.executeUpdate();
             System.out.println("Table checked or created: userMarkups");

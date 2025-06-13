@@ -88,16 +88,7 @@ public class MessageTimeUpdatePojo extends MongoDBConnector {
     }
 
     public void ensureTableExists(Connection connection) {
-        String createTableQuery = """
-        CREATE TABLE IF NOT EXISTS users (
-            chatId BIGINT PRIMARY KEY,
-            updateTime BIGINT,
-            viewMessageBeforeUpdateTime BIGINT,
-            lastViewMessageUpdateTime BIGINT,
-            needUpdate BOOLEAN,
-            viewMessageToUpdate TEXT
-        )
-        """;
+        String createTableQuery = "CREATE TABLE IF NOT EXISTS users (chatId BIGINT PRIMARY KEY, updateTime BIGINT, viewMessageBeforeUpdateTime BIGINT, lastViewMessageUpdateTime BIGINT, needUpdate BOOLEAN, viewMessageToUpdate TEXT)";
         try (PreparedStatement statement = connection.prepareStatement(createTableQuery)) {
             statement.executeUpdate();
             System.out.println("Table checked or created: users");

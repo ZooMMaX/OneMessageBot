@@ -89,18 +89,7 @@ public class UserPojo extends MongoDBConnector {
 
 
     public void ensureTableExists(Connection connection) {
-        String createTableQuery = """
-        CREATE TABLE IF NOT EXISTS users (
-            chatId BIGINT PRIMARY KEY,
-            ViewMessageId BIGINT,
-            lastMessageId BIGINT,
-            messageType TEXT,
-            language TEXT,
-            onMessageFlag TEXT,
-            notificationMessageId BIGINT,
-            showNotif BOOLEAN
-        )
-        """;
+        String createTableQuery = " CREATE TABLE IF NOT EXISTS users (chatId BIGINT PRIMARY KEY, ViewMessageId BIGINT, lastMessageId BIGINT, messageType TEXT, language TEXT, onMessageFlag TEXT, notificationMessageId BIGINT, showNotif BOOLEAN)";
         try (PreparedStatement statement = connection.prepareStatement(createTableQuery)) {
             statement.executeUpdate();
             System.out.println("Table checked or created: users");

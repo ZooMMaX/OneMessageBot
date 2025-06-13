@@ -81,19 +81,17 @@ Features:
 ## Installation
 
 Maven:
-
 ```xml
 <dependency>
     <groupId>space.zoommax</groupId>
     <artifactId>OneMessageBot</artifactId>
-    <version>2.1.4.7</version>
+    <version>2.1.4.8</version>
 </dependency>
 ```
 
 Gradle:
-
 ```groovy
-implementation 'space.zoommax:OneMessageBot:2.1.4.7'
+implementation 'space.zoommax:OneMessageBot:2.1.4.8'
 ```
 
 ## Third-party Dependencies
