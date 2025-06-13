@@ -25,7 +25,6 @@ import space.zoommax.utils.keyboard.Button;
 import space.zoommax.utils.keyboard.ButtonType;
 import space.zoommax.utils.keyboard.Keyboard;
 import space.zoommax.utils.lang.LocalizationManager;
-import ru.zoommax.view.*;
 import space.zoommax.view.*;
 
 import java.io.File;
