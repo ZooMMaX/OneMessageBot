@@ -7,7 +7,7 @@
 ![GitHub open pull requests](https://img.shields.io/github/issues-pr/ZooMMaX/OneMessageBot?style=social)
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/ZooMMaX/OneMessageBot?style=social)
-![Maven Central Version](https://img.shields.io/maven-central/v/ru.zoommax/OneMessageBot?style=plastic)
+![Maven Central Version](https://img.shields.io/maven-central/v/space.zoommax/OneMessageBot?style=plastic)
 
 <details>
 <summary>How to read version</summary>
