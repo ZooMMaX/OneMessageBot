@@ -365,7 +365,7 @@ public class BotApp implements Runnable {
                                 long msgId = 0;
                                 try {
                                     msgId = bot.execute(new SendMessage(update.message().chat().id(), localizationManager.getTranslationForLanguage(userPojo.getLanguage(), "main.bot_starting"))).message().messageId();
-                                    for (int x = 1; x < 1001; x++) {
+                                    for (int x = 1; x < 10; x++) {
                                         long finalMsgId = msgId;
                                         int finalX = x;
                                         Runnable r = (() -> {
