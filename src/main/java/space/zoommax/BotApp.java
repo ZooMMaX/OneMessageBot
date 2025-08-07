@@ -2,6 +2,7 @@ package space.zoommax;
 
 import com.pengrad.telegrambot.TelegramBot;
 import com.pengrad.telegrambot.UpdatesListener;
+import com.pengrad.telegrambot.model.Chat;
 import com.pengrad.telegrambot.model.PhotoSize;
 import com.pengrad.telegrambot.model.Update;
 import com.pengrad.telegrambot.model.request.InlineKeyboardButton;
@@ -280,6 +281,11 @@ public class BotApp implements Runnable {
         bot = new TelegramBot(botToken);
         bot.setUpdatesListener(updates -> {
             for (Update update : updates){
+                if (update.message().chat().type() == Chat.Type.group || update.message().chat().type() == Chat.Type.supergroup){
+                    GroupBotApp groupBotApp = new GroupBotApp(update);
+                    executor.submit(groupBotApp);
+                    return UpdatesListener.CONFIRMED_UPDATES_ALL;
+                }
 
                 if (update.preCheckoutQuery() != null) {
                     AnswerPreCheckoutQuery answerPreCheckoutQuery = new AnswerPreCheckoutQuery(update.preCheckoutQuery().id());
