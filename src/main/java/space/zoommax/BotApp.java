@@ -281,12 +281,6 @@ public class BotApp implements Runnable {
         bot = new TelegramBot(botToken);
         bot.setUpdatesListener(updates -> {
             for (Update update : updates){
-                if (update.message().chat().type() == Chat.Type.group || update.message().chat().type() == Chat.Type.supergroup){
-                    GroupBotApp groupBotApp = new GroupBotApp(update);
-                    executor.submit(groupBotApp);
-                    return UpdatesListener.CONFIRMED_UPDATES_ALL;
-                }
-
                 if (update.preCheckoutQuery() != null) {
                     AnswerPreCheckoutQuery answerPreCheckoutQuery = new AnswerPreCheckoutQuery(update.preCheckoutQuery().id());
                     bot.execute(answerPreCheckoutQuery);
@@ -337,6 +331,11 @@ public class BotApp implements Runnable {
 
                 ViewMessage viewMessage = null;
                 if (update.message() != null) {
+                    if (update.message().chat().type() == Chat.Type.group || update.message().chat().type() == Chat.Type.supergroup) {
+                        GroupBotApp groupBotApp = new GroupBotApp(update);
+                        executor.submit(groupBotApp);
+                        return UpdatesListener.CONFIRMED_UPDATES_ALL;
+                    }
                     //payment
                     if (update.message().successfulPayment() != null || update.message().refundedPayment() != null) {
                         if (annotated != null) {
